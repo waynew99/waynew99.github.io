@@ -1,0 +1,7 @@
+
+# production
+/build
+
+/node_modules
+/public
+/.vscode
