@@ -34,10 +34,6 @@ module.exports = {
         "avoidEscape": true
       }
     ],
-    "jsx-quotes": [
-      "warn",
-      "prefer-double"
-    ],
     "object-shorthand": "warn",
     "eqeqeq": "warn",
     "no-var": "warn",
