@@ -1,6 +1,6 @@
 import { animated, useSpring } from '@react-spring/web'
 
-const FadeIn = ({ isVisible, children } : { isVisible: boolean, children: React.ReactElement }) => {
+const FadeInEffect = ({ isVisible, children } : { isVisible: boolean, children: React.ReactElement }) => {
   const styles = useSpring({
     opacity: isVisible ? 1 : 0,
     y: isVisible ? 0 : 24,
@@ -10,4 +10,4 @@ const FadeIn = ({ isVisible, children } : { isVisible: boolean, children: React.
   return <animated.div style={styles}>{children}</animated.div>
 }
 
-export default FadeIn;
+export default FadeInEffect;
