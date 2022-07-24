@@ -55,7 +55,7 @@ export default function HomeTextLines() {
 
 
   return (
-    <div className={'ml-20 mt-10 text-left margin-top-10 text-6xl leading-relaxed'}>
+    <div className={'ml-20 mt-10 text-left margin-top-10 text-7xl leading-relaxed'}>
       {textLinesAnimated}
     </div>
   );
