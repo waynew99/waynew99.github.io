@@ -15,14 +15,4 @@ const FadeInEffect = ({ isVisible, children } : { isVisible: boolean, children: 
   return <animated.div style={styles}>{children}</animated.div>
 }
 
-const NewFadeInEffect = ({ isVisible, children } : { isVisible: boolean, children: React.ReactElement }) => {
-  const styles = useSpring({
-    opacity: isVisible ? 1 : 1,
-    y: isVisible ? 0 : 100,
-    config: { duration: 100 }
-  });
-
-  return <animated.div style={styles}>{children}</animated.div>
-}
-
 export default FadeInEffect;

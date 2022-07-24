@@ -3,26 +3,31 @@ import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import MenuBarItem from './MenuBarItem';
 
 
-export default function MenuBar() {
+export default function MenuBar({ handleClick }: { handleClick: (text: string) => void }) {
   const [isLogoHover, setIsLogoHover] = useState(false);
 
   const menuBarItemTexs = [
-    //'Home',
+    'Home',
     'Works',
     'Résumé',
     'About',
     'Contact',
   ]
 
+  const handleMenuBarItemClick = (text: string) => {
+    handleClick(text);
+  }
+
   const menuBarItems = menuBarItemTexs.map((text) => (
-    <MenuBarItem text={text} />
+    <MenuBarItem text={text} onClick={handleMenuBarItemClick} />
   ));
 
 
   return (
-    <div className="mt-6 flex flex-row justify-between items-center">
+    <div className="pt-6 flex flex-row justify-between items-center sticky top-0 bg-white z-10">
       <a
-        href={'#home'}
+        className="cursor-pointer"
+        onClick={() => handleMenuBarItemClick('Home')}
         onMouseEnter={() => setIsLogoHover(true)}
         onMouseLeave={() => setIsLogoHover(false)}
       >

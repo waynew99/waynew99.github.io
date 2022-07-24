@@ -6,9 +6,10 @@ interface LinkHoverProps {
   yOffset: number
   underlineHeight: number
   zoomScale?: number
+  useGradient?: boolean
 }
 
-const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScale = 1 }: LinkHoverProps) => {
+const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScale=1, useGradient=false }: LinkHoverProps) => {
 
   const config =  {
     mass: 1,
@@ -28,13 +29,15 @@ const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScal
     config
   });
 
+  const myLineColor = useGradient ? 'bg-gradient-to-r from-cyan-500 to-fuchsia-500' : '';
+
   return (
     <div>
       <animated.div style={textProps}>
         {children}
       </animated.div>
       <animated.div 
-        className={`-translate-y-${yOffset}`}
+        className={`-translate-y-${yOffset} ${myLineColor}`}
         style={{
         ...underlineProps,
         position: 'relative',

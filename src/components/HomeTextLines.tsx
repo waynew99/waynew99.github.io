@@ -1,14 +1,16 @@
 import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
+import Gradient from 'rgt';
 
 
 export default function HomeTextLines() {
-  const [linesVisibility, setLinesVisibility] = useState([false, false, false, false]);
+
+  const [linesVisibility, setLinesVisibility] = useState(Array(4).fill(false));
 
   const [isLocationHover, setIsLocationHover] = useState(false);
 
-  const textLinse = [
+  const textLines = [
     <p> Hi 👋 你好！</p>,
     <p> I'm Wayne Wang - curious </p>,
     <p> developer and student based at</p>,
@@ -22,10 +24,14 @@ export default function HomeTextLines() {
           isHover={isLocationHover}
           yOffset={2}
           underlineHeight={3}
+          zoomScale={1.1}
+          useGradient
         >
-          <div className='flex flex-row'>
-            <span>Middlebury, Vermont.</span>
-            <div className='w-10' />
+          <div className='flex flex-row mr-20 font-bold italic'>
+            <Gradient dir="left-to-right" from="#F72585" to="#4CC9F0">Middlebury,</Gradient>
+            <div className='ml-4' >
+              <Gradient dir="left-to-right" from="#14532D" to="#14532D">Vermont.</Gradient>
+            </div>
           </div>
         </LinkHoverEffect>
       </a>
@@ -47,7 +53,7 @@ export default function HomeTextLines() {
     }, 300);
   }, []);
 
-  const textLinesAnimated = textLinse.map((text, index) => (
+  const textLinesAnimated = textLines.map((text, index) => (
     <FadeIn isVisible={linesVisibility[index]}>
       {text}
     </FadeIn>

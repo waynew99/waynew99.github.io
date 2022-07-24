@@ -3,12 +3,13 @@ import { animated, useSpring } from '@react-spring/web'
 interface CardHoverEffectProps {
   isHover: boolean,
   children: React.ReactElement,
+  scale?: number
 }
 
-const CardHoverEffect = ({ isHover, children }: CardHoverEffectProps) => {
+const CardHoverEffect = ({ isHover, children, scale=1.05 }: CardHoverEffectProps) => {
 
-  const textProps = useSpring({
-    scale: isHover ? 1.1 : 1,
+  const props = useSpring({
+    scale: isHover ? scale : 1,
     config: {
       mass: 1,
       tension: 200,
@@ -17,9 +18,9 @@ const CardHoverEffect = ({ isHover, children }: CardHoverEffectProps) => {
   });
 
   return (
-      <animated.div style={textProps}>
-        {children}
-      </animated.div>
+    <animated.div style={props}>
+      {children}
+    </animated.div>
   )
 }
 

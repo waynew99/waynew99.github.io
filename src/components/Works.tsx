@@ -4,7 +4,7 @@ import data from '../Data/data.json';
 import WorkCard from './WordCard';
 import { Waypoint } from 'react-waypoint';
 
-export default function Works() {
+export default function Works({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) {
   const [isOnScreen, setIsOnScreen] = useState(false);
   const [cardsVisibility, setCardsVisibility] = useState(Array(data.projects.length).fill(false));
 
@@ -37,17 +37,18 @@ export default function Works() {
   ));
 
   return (
-    <div className='mt-20'>
+    <div className='mt-28'>
       <div className='flex justify-center'>
         <div className='bg-black h-0.5 w-full mx-10' />
       </div>
-      <h1 className='ml-20 mt-20 text-4xl text-bold'>Works</h1>
-      <Waypoint onEnter={() => setIsOnScreen(true)}>
-        <div className='mt-10 mx-40 grid grid-cols-2 grid-rows-2 gap-20'>
-          {wordCards}
-        </div>
-      </Waypoint>
+      <div ref={scrollRef} className='mt-6 pt-6'>
+        <h1 className='ml-20 mt-24 text-4xl text-bold'>Works</h1>
+        <Waypoint onEnter={() => setIsOnScreen(true)}>
+          <div className='mt-10 mx-60 grid grid-cols-2 grid-rows-2 gap-20'>
+            {wordCards}
+          </div>
+        </Waypoint>
+      </div>
     </div >
-
   );
 }
