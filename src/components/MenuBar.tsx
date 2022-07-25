@@ -24,7 +24,7 @@ export default function MenuBar({ handleClick, mode }: MenuBarProps) {
       'bgColor': '#fff',
       'textColor': '#000',
       'logoColor': '#000',
-      'logoSrc': '/ipanopto.png',
+      'logoSrc': '/logo-black.png',
     },
     'Works': {
       'bgColor': '#475569', // tailwind.css's slate-600
