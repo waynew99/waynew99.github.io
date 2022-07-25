@@ -62,7 +62,7 @@ export default function MenuBar({ handleClick, mode }: MenuBarProps) {
           onMouseLeave={() => setIsLogoHover(false)}
         >
           <LinkHoverEffect isHover={isLogoHover} yOffset={1} underlineHeight={0} zoomScale={1.3} >
-            <img className={'ml-12 w-20 h-20'} src={modes[mode].logoSrc} alt='logo' />
+            <img className={'ml-12 w-20 h-20'} src={process.env.PUBLIC_URL + modes[mode].logoSrc} alt='logo' />
           </LinkHoverEffect>
         </a>
 

@@ -22,7 +22,7 @@ export default function Cat() {
         <animated.div className={'w-20 h-20 mr-10 mb-10 rounded-full'} style={props}>
           <img
             className={'w-20 h-20 rounded-full'}
-            src={'/cat.gif'}
+            src={process.env.PUBLIC_URL + '/cat.gif'}
             alt='cat'
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}

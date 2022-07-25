@@ -22,7 +22,7 @@ export default function WorkCard({ img, title, description, onClick, lineColor =
         onMouseLeave={() => setIsHover(false)}
       >
         <div className='h-100 overflow-hidden rounded-2xl'>
-          <img className='h-full w-full object-cover' alt={title} src={img} />
+          <img className='h-full w-full object-cover' alt={title} src={process.env.PUBLIC_URL + img} />
         </div>
         <div className='w-fit'>
           <LinkHoverEffect isHover={isHover} yOffset={10} underlineHeight={2} useGradient>
