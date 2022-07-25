@@ -4,7 +4,7 @@
             "id": 1,
             "title": "MIMDB",
             "description": "This is a Movie Information Database",
-            "img": "/projects/mimdb.png",
+            "img": "/mimdb.png",
             "url": "https://mimdb.herokuapp.com/"
         },
         {
@@ -12,21 +12,21 @@
             "title": "LangSec",
             "description": "Language-theoretic Security: The View from the Tower of Babel",
             "url": "http://langsec.org/spw22/papers.html/",
-            "img": "/projects/langsec.png"
+            "img": "/langsec.png"
         },
         {
             "id": 3,
             "title": "CodeDash",
             "description": "Another social media... but using ONLY CODE!",
             "url": "https://expo.dev/@waynew99/codedash?serviceType=classic&distribution=expo-go",
-            "img": "/projects/codedash.png"
+            "img": "/codedash.png"
         },
         {
             "id": 4,
             "title": "iPanopto",
             "description": "A Chrome & Firefox extension for Panopto video download",
             "url": "https://cliffy2000.github.io/panopto-downloader/",
-            "img": "/projects/ipanopto.png"
+            "img": "/ipanopto.png"
         }
     ]
 }
