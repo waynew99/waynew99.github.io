@@ -7,10 +7,13 @@ interface LinkHoverProps {
   underlineHeight: number
   zoomScale?: number
   useGradient?: boolean
+  lineColor?: string
 }
 
-const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScale=1, useGradient=false }: LinkHoverProps) => {
+const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScale=1, useGradient=false, lineColor='bg-black' }: LinkHoverProps) => {
 
+
+  
   const config =  {
     mass: 1,
     tension: 200,
@@ -24,12 +27,13 @@ const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScal
   });
 
   const textProps = useSpring({
-    //color: isHover ? '#aa0' : '#000',
     scale: isHover ? zoomScale : 1,
     config
   });
 
-  const myLineColor = useGradient ? 'bg-gradient-to-r from-cyan-500 to-fuchsia-500' : '';
+  const myLineColor = useGradient ? 'bg-gradient-to-r from-cyan-500 to-fuchsia-500' : lineColor;
+
+  console.log(myLineColor, "myLineColor");
 
   return (
     <div>
@@ -42,7 +46,6 @@ const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScal
         ...underlineProps,
         position: 'relative',
         height: `${underlineHeight}px`,
-        backgroundColor: '#000',
       }} />
 
     </div>

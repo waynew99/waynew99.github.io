@@ -2,19 +2,21 @@ import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import Gradient from 'rgt';
+import { Waypoint } from 'react-waypoint';
 
+interface HomeTextLinesProps {
+  onInView: () => void;
+}
 
-export default function HomeTextLines() {
-
+export default function HomeTextLines({ onInView }: HomeTextLinesProps) {
   const [linesVisibility, setLinesVisibility] = useState(Array(4).fill(false));
-
   const [isLocationHover, setIsLocationHover] = useState(false);
 
   const textLines = [
     <p> Hi 👋 你好！</p>,
     <p> I'm Wayne Wang - curious </p>,
     <p> developer and student based at</p>,
-    <p
+    <div
       className={'w-fit'}
       onMouseEnter={() => setIsLocationHover(true)}
       onMouseLeave={() => setIsLocationHover(false)}
@@ -36,7 +38,7 @@ export default function HomeTextLines() {
         </LinkHoverEffect>
       </a>
 
-    </p>
+    </div>
   ]
 
   useEffect(() => {
@@ -54,15 +56,19 @@ export default function HomeTextLines() {
   }, []);
 
   const textLinesAnimated = textLines.map((text, index) => (
-    <FadeIn isVisible={linesVisibility[index]}>
-      {text}
-    </FadeIn>
+    <div key={index}>
+      <FadeIn isVisible={linesVisibility[index]}>
+        {text}
+      </FadeIn>
+    </div>
   ));
 
 
   return (
-    <div className={'ml-20 mt-10 text-left margin-top-10 text-7xl leading-relaxed'}>
-      {textLinesAnimated}
-    </div>
+    <Waypoint onEnter={onInView}>
+      <div className={'pl-20 pt-64 h-screen text-left text-5xl leading-relaxed'}>
+        {textLinesAnimated}
+      </div>
+    </Waypoint>
   );
 }

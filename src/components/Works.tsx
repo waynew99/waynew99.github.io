@@ -4,7 +4,12 @@ import data from '../Data/data.json';
 import WorkCard from './WordCard';
 import { Waypoint } from 'react-waypoint';
 
-export default function Works({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) {
+interface WorksProps {
+  scrollRef: React.RefObject<HTMLDivElement>;
+  onInView: () => void;
+}
+
+export default function Works({ scrollRef, onInView }: WorksProps) {
   const [isOnScreen, setIsOnScreen] = useState(false);
   const [cardsVisibility, setCardsVisibility] = useState(Array(data.projects.length).fill(false));
 
@@ -25,25 +30,29 @@ export default function Works({ scrollRef }: { scrollRef: React.RefObject<HTMLDi
   }, [isOnScreen]);
 
   const wordCards = data.projects.map((project, i) => (
-    <FadeInEffect isVisible={cardsVisibility[i]}>
-      <WorkCard
-        key={project.id}
-        img={project.img}
-        title={project.title}
-        description={project.description}
-        onClick={() => window.open(project.url)}
-      />
-    </FadeInEffect>
+    <div key={i}>
+      <FadeInEffect isVisible={cardsVisibility[i]}>
+        <WorkCard
+          key={project.id}
+          img={project.img}
+          title={project.title}
+          description={project.description}
+          onClick={() => window.open(project.url)}
+          lineColor={'bg-slate-200'}
+        />
+      </FadeInEffect>
+    </div>
+
   ));
 
   return (
-    <div className='mt-28'>
-      <div className='flex justify-center'>
-        <div className='bg-black h-0.5 w-full mx-10' />
-      </div>
-      <div ref={scrollRef} className='mt-6 pt-6'>
-        <h1 className='ml-20 mt-24 text-4xl text-bold'>Works</h1>
-        <Waypoint onEnter={() => setIsOnScreen(true)}>
+    <div className='bg-slate-600 text-white'>
+      <div ref={scrollRef} className='pt-36'>
+        <h1 className='ml-20 text-4xl text-bold'>Works</h1>
+        <Waypoint onEnter={() => {
+          onInView();
+          setIsOnScreen(true);
+        }}>
           <div className='mt-10 mx-60 grid grid-cols-2 grid-rows-2 gap-20'>
             {wordCards}
           </div>
