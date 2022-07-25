@@ -33,8 +33,6 @@ const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScal
 
   const myLineColor = useGradient ? 'bg-gradient-to-r from-cyan-500 to-fuchsia-500' : lineColor;
 
-  console.log(myLineColor, "myLineColor");
-
   return (
     <div>
       <animated.div style={textProps}>

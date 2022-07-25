@@ -52,8 +52,6 @@ export default function MenuBar({ handleClick, mode }: MenuBarProps) {
     }
   });
 
-  console.log("mode", mode);
-  console.log("menuBar", modes[mode].textColor==='#fff' ? 'bg-slate-200' : 'bg-black');
   return (
     <animated.div style={springProps} className='fixed top-0 z-10 w-full'>
       <div className='pt-6 flex flex-row justify-between items-center'>

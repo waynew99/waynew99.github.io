@@ -1,1 +1,1 @@
-declare module "rgt"
+declare module 'rgt'
