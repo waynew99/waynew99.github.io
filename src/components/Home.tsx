@@ -19,7 +19,7 @@ export default function Home() {
       worksRef.current?.scrollIntoView({ behavior: 'smooth' });
       setCurrInView('Works');
     } else if (text === 'Résumé') {
-      window.open('/Résumé.pdf', '_blank');
+      window.open(process.env.PUBLIC_URL + '/Résumé.pdf', '_blank');
     }
   }
 
