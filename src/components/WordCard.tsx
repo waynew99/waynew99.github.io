@@ -7,10 +7,9 @@ interface WorkCardProps {
   title?: string,
   description?: string,
   onClick: () => void,
-  lineColor?: string,
 }
 
-export default function WorkCard({ img, title, description, onClick, lineColor = 'bg-black' }: WorkCardProps) {
+export default function WorkCard({ img, title, description, onClick }: WorkCardProps) {
   const [isHover, setIsHover] = useState(false);
   
   return (
@@ -30,8 +29,8 @@ export default function WorkCard({ img, title, description, onClick, lineColor =
           </LinkHoverEffect>
         </div>
         <div className='w-fit'>
-          <LinkHoverEffect isHover={isHover} yOffset={1} underlineHeight={1} lineColor={lineColor}>
-            <h2 className='text-xl opacity-50'> {description ?? 'Description'} </h2>
+          <LinkHoverEffect isHover={isHover} yOffset={1} underlineHeight={2} lineColor={'bg-gray-600'}> 
+            <h2 className='text-xl text-gray-600'> {description ?? 'Description'} </h2>
           </LinkHoverEffect>
         </div>
 

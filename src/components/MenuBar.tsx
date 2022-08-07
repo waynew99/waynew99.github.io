@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import MenuBarItem from './MenuBarItem';
-import { animated, useSpring } from '@react-spring/web'
 
 interface MenuBarProps {
-  handleClick: (text: string) => void,
-  mode: 'Home' | 'Works'
+  handleClick: (text: string) => void
 }
 
-export default function MenuBar({ handleClick, mode }: MenuBarProps) {
+export default function MenuBar({ handleClick }: MenuBarProps) {
   const [isLogoHover, setIsLogoHover] = useState(false);
 
   const menuBarItemTexs = [
@@ -17,44 +15,19 @@ export default function MenuBar({ handleClick, mode }: MenuBarProps) {
     'Résumé',
     'About',
     'Contact',
-  ]
-
-  const modes = {
-    'Home': {
-      'bgColor': '#fff',
-      'textColor': '#000',
-      'logoColor': '#000',
-      'logoSrc': '/logoBlack.png',
-    },
-    'Works': {
-      'bgColor': '#475569', // tailwind.css's slate-600
-      'textColor': '#fff',
-      'logoColor': '#fff',
-      'logoSrc': '/logoWhite.png',
-    }
-  }
+  ];
 
   const handleMenuBarItemClick = (text: string) => {
     handleClick(text);
   }
 
   const menuBarItems = menuBarItemTexs.map((text) => (
-    <MenuBarItem key={text} text={text} onClick={handleMenuBarItemClick} lineColor={modes[mode].textColor==='#fff' ? 'bg-white' : 'bg-black'} />
+    <MenuBarItem key={text} text={text} onClick={handleMenuBarItemClick} lineColor={'bg-black'} />
   ));
 
-  const springProps = useSpring({
-    backgroundColor: modes[mode].bgColor,
-    color: modes[mode].textColor,
-    config: {
-      mass: 1,
-      tension: 200,
-      friction: 30
-    }
-  });
-
   return (
-    <animated.div style={springProps} className='fixed top-0 z-10 w-full'>
-      <div className='pt-6 flex flex-row justify-between items-center'>
+    <div className='fixed top-0 z-10 w-full flex flex-col'>
+      <div className='pt-6 flex flex-row justify-between items-center bg-white'>
         <a
           className='cursor-pointer'
           onClick={() => handleMenuBarItemClick('Home')}
@@ -62,7 +35,7 @@ export default function MenuBar({ handleClick, mode }: MenuBarProps) {
           onMouseLeave={() => setIsLogoHover(false)}
         >
           <LinkHoverEffect isHover={isLogoHover} yOffset={1} underlineHeight={0} zoomScale={1.3} >
-            <img className={'ml-12 w-20 h-20'} src={process.env.PUBLIC_URL + modes[mode].logoSrc} alt='logo' />
+            <img className={'ml-12 w-20 h-20'} src={`${process.env.PUBLIC_URL}/logoBlack.png`} alt='logo' />
           </LinkHoverEffect>
         </a>
 
@@ -70,6 +43,7 @@ export default function MenuBar({ handleClick, mode }: MenuBarProps) {
           {menuBarItems}
         </div>
       </div>
-    </animated.div>
+      <div className='w-full h-4 bg-gradient-to-b from-white' />
+    </div>
   );
 }

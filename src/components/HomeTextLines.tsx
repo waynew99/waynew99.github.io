@@ -2,13 +2,9 @@ import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import Gradient from 'rgt';
-import { Waypoint } from 'react-waypoint';
 
-interface HomeTextLinesProps {
-  onInView: () => void;
-}
 
-export default function HomeTextLines({ onInView }: HomeTextLinesProps) {
+export default function HomeTextLines() {
   const [linesVisibility, setLinesVisibility] = useState(Array(4).fill(false));
   const [isLocationHover, setIsLocationHover] = useState(false);
 
@@ -65,10 +61,8 @@ export default function HomeTextLines({ onInView }: HomeTextLinesProps) {
 
 
   return (
-    <Waypoint onEnter={onInView}>
-      <div className={'pl-20 pt-64 h-screen text-left text-5xl leading-relaxed'}>
-        {textLinesAnimated}
-      </div>
-    </Waypoint>
+    <div className={'pl-20 pt-64 h-screen text-left text-5xl leading-relaxed'}>
+      {textLinesAnimated}
+    </div>
   );
 }

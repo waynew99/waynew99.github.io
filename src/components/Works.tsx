@@ -6,10 +6,9 @@ import { Waypoint } from 'react-waypoint';
 
 interface WorksProps {
   scrollRef: React.RefObject<HTMLDivElement>;
-  onInView: () => void;
 }
 
-export default function Works({ scrollRef, onInView }: WorksProps) {
+export default function Works({ scrollRef }: WorksProps) {
   const [isOnScreen, setIsOnScreen] = useState(false);
   const [cardsVisibility, setCardsVisibility] = useState(Array(data.projects.length).fill(false));
 
@@ -38,7 +37,6 @@ export default function Works({ scrollRef, onInView }: WorksProps) {
           title={project.title}
           description={project.description}
           onClick={() => window.open(project.url)}
-          lineColor={'bg-slate-200'}
         />
       </FadeInEffect>
     </div>
@@ -46,11 +44,10 @@ export default function Works({ scrollRef, onInView }: WorksProps) {
   ));
 
   return (
-    <div className='bg-slate-600 text-white'>
+    <div>
       <div ref={scrollRef} className='pt-36'>
         <h1 className='ml-20 text-4xl text-bold'>Works</h1>
         <Waypoint onEnter={() => {
-          onInView();
           setIsOnScreen(true);
         }}>
           <div className='mt-10 mx-60 grid grid-cols-2 grid-rows-2 gap-20'>
