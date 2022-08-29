@@ -7,7 +7,7 @@ const FadeInEffect = ({ isVisible, children } : { isVisible: boolean, children: 
     y: isVisible ? 0 : 70,
     config: {
       mass: 1,
-      tension: 500,
+      tension: 300,
       friction: 70
     }
   });

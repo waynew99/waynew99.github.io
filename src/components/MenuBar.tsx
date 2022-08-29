@@ -9,11 +9,10 @@ interface MenuBarProps {
 export default function MenuBar({ handleClick }: MenuBarProps) {
   const [isLogoHover, setIsLogoHover] = useState(false);
 
-  const menuBarItemTexs = [
+  const menuBarItemTexts = [
     'Home',
     'Works',
     'Résumé',
-    'About',
     'Contact',
   ];
 
@@ -21,7 +20,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
     handleClick(text);
   }
 
-  const menuBarItems = menuBarItemTexs.map((text) => (
+  const menuBarItems = menuBarItemTexts.map((text) => (
     <MenuBarItem key={text} text={text} onClick={handleMenuBarItemClick} lineColor={'bg-black'} />
   ));
 

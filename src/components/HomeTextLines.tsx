@@ -10,8 +10,8 @@ export default function HomeTextLines() {
 
   const textLines = [
     <p> Hi 👋 你好！</p>,
-    <p> I'm Wayne Wang - curious </p>,
-    <p> developer and student based at</p>,
+    <p> I'm Wayne Wang - student, </p>,
+    <p> developer, and researcher based at</p>,
     <div
       className={'w-fit'}
       onMouseEnter={() => setIsLocationHover(true)}
@@ -46,7 +46,7 @@ export default function HomeTextLines() {
             newState[i] = true;
             return newState;
           });
-        }, i * 200);
+        }, i * 300);
       }
     }, 300);
   }, []);
