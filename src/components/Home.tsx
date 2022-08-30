@@ -3,11 +3,13 @@ import HomeTextLines from './HomeTextLines';
 import Works from './Works';
 import { useRef } from 'react';
 import Cat from './Cat';
+import Contact from './Contact';
 
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
   const worksRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (text: string) => {
     if (text === 'Home') {
@@ -16,6 +18,8 @@ export default function Home() {
       worksRef.current?.scrollIntoView({ behavior: 'smooth' });
     } else if (text === 'Résumé') {
       window.open(`${process.env.PUBLIC_URL}/resume.pdf`, '_blank');
+    } else if (text === 'Contact') {
+      contactRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -24,6 +28,7 @@ export default function Home() {
       <MenuBar handleClick={handleClick} />
       <HomeTextLines />
       <Works scrollRef={worksRef} />
+      <Contact scrollRef={contactRef} />
       <Cat />
     </div>
   );

@@ -28,5 +28,31 @@
             "url": "https://expo.dev/@waynew99/codedash?serviceType=classic&distribution=expo-go",
             "img": "/codedash.png"
         }
+    ],
+    "contacts": [
+        {
+            "id": 1,
+            "name": "Email",
+            "value": "me@waynewang.me",
+            "url": "mailto:sw@middlebury.edu?subject=Hi Wayne!"
+        },
+        {
+            "id": 2,
+            "name": "Github",
+            "value": "github.com/waynewang",
+            "url": "https://github.com/waynew99"
+        },
+        {
+            "id": 3,
+            "name": "LinkedIn",
+            "value": "linkedin.com/in/waynewang",
+            "url": "https://www.linkedin.com/in/waynewangme/"
+        },
+        {
+            "id": 4,
+            "name": "Website",
+            "value": "waynewang.me",
+            "url": "https://waynewang.me"
+        }
     ]
 }
