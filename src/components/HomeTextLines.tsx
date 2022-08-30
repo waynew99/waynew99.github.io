@@ -12,7 +12,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
   const [isMoreHover, setIsMoreHover] = useState(false);
 
   const moreProps = useSpring({
-    to: { opacity: isMoreHover ? 1 : 0 },
+    opacity: isMoreHover ? 1 : 0,
     config: { duration: 300 }
   });
 

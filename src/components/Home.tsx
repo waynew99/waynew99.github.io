@@ -1,7 +1,7 @@
 import MenuBar from './MenuBar';
 import HomeTextLines from './HomeTextLines';
 import Works from './Works';
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import Cat from './Cat';
 import Contact from './Contact';
 import MoreText from './MoreText';
@@ -11,6 +11,8 @@ export default function Home() {
   const moreTextRef = useRef<HTMLDivElement>(null);
   const worksRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  const [zoomCat, setZoomCat] = useState(false);
 
   const handleClick = (text: string) => {
     if (text === 'Home') {
@@ -30,10 +32,10 @@ export default function Home() {
     <div className='justify-center' ref={homeRef}>
       <MenuBar handleClick={handleClick} />
       <HomeTextLines onMoreClick={()=>handleClick('More')}/>
-      <MoreText scrollRef={moreTextRef} />
+      <MoreText scrollRef={moreTextRef} onButtonHover={setZoomCat}/>
       <Works scrollRef={worksRef} />
       <Contact scrollRef={contactRef} />
-      <Cat />
+      <Cat zoomCat={zoomCat} />
     </div>
   );
 }
