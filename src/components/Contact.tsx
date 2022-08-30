@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import FadeInEffect from '../Animations/FadeInEffect';
 import data from '../Data/data.json';
-import WorkCard from './WordCard';
 import { Waypoint } from 'react-waypoint';
-import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import ContactItem from './ContactItem';
 
 interface ContactProps {
@@ -34,31 +32,34 @@ export default function Contact({ scrollRef }: ContactProps) {
     <div key={i}>
       {/* contactVisibility[0] is for the text line */}
       <FadeInEffect isVisible={contactVisibility[i + 1]}>
-        <a href={contact.url} target="_blank">
-          <ContactItem text={contact.name} />
-        </a>
+        <ContactItem
+          text={contact.name}
+          icon={contact.icon_name}
+          url={contact.url}
+        />
       </FadeInEffect>
     </div>
 
   ));
 
   return (
-    <div>
-      <div ref={scrollRef} className='pt-36'>
-        <h1 className='ml-20 text-4xl text-bold'>Contact</h1>
-        <Waypoint onEnter={() => {
-          setIsOnScreen(true);
-        }}>
-          <div className='ml-20'>
-            <FadeInEffect isVisible={contactVisibility[0]}>
-              <p className='mt-10 text-6xl'>Let's connect!</p>
-            </FadeInEffect>
-            <div className='mt-10 flex flex-row'>
-              {contacts}
-            </div>
+    <div ref={scrollRef} className='pt-48'>
+      <h1 className='ml-20 text-4xl text-bold'>Contact</h1>
+      <Waypoint onEnter={() => {
+        setIsOnScreen(true);
+      }}>
+        <div className='ml-20'>
+          <FadeInEffect isVisible={contactVisibility[0]}>
+            <p className='mt-10 text-6xl'>Let's connect!</p>
+          </FadeInEffect>
+          <div className='mt-10 flex flex-row'>
+            {contacts}
           </div>
-        </Waypoint>
-      </div>
-    </div >
+          <div className='mt-20'>
+            Made with ❤ by <a className='underline underline-offset-4' href='https://github.com/waynew99' target='_blank'>Wayne Wang</a>
+          </div>
+        </div>
+      </Waypoint>
+    </div>
   );
 }

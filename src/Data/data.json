@@ -34,25 +34,29 @@
             "id": 1,
             "name": "Email",
             "value": "me@waynewang.me",
-            "url": "mailto:sw@middlebury.edu?subject=Hi Wayne!"
+            "url": "mailto:sw@middlebury.edu?subject=Hi Wayne!",
+            "icon_name": "email"
         },
         {
             "id": 2,
             "name": "Github",
             "value": "github.com/waynewang",
-            "url": "https://github.com/waynew99"
+            "url": "https://github.com/waynew99",
+            "icon_name": "github"
         },
         {
             "id": 3,
             "name": "LinkedIn",
             "value": "linkedin.com/in/waynewang",
-            "url": "https://www.linkedin.com/in/waynewangme/"
+            "url": "https://www.linkedin.com/in/waynewangme/",
+            "icon_name": "linkedin"
         },
         {
             "id": 4,
             "name": "Website",
             "value": "waynewang.me",
-            "url": "https://waynewang.me"
+            "url": "https://waynewang.me",
+            "icon_name": "website"
         }
     ]
 }
