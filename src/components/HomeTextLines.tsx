@@ -2,11 +2,19 @@ import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import Gradient from 'rgt';
+import { useSpring, animated } from '@react-spring/web';
+import { IoArrowDown } from 'react-icons/io5';
 
 
-export default function HomeTextLines() {
-  const [linesVisibility, setLinesVisibility] = useState(Array(4).fill(false));
+export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void }) {
+  const [linesVisibility, setLinesVisibility] = useState(Array(5).fill(false));
   const [isLocationHover, setIsLocationHover] = useState(false);
+  const [isMoreHover, setIsMoreHover] = useState(false);
+
+  const moreProps = useSpring({
+    to: { opacity: isMoreHover ? 1 : 0 },
+    config: { duration: 300 }
+  });
 
   const textLines = [
     <p> Hi 👋 你好！</p>,
@@ -33,7 +41,27 @@ export default function HomeTextLines() {
           </div>
         </LinkHoverEffect>
       </a>
-
+    </div>,
+    <div
+      className={'w-fit text-2xl mt-8 cursor-pointer'}
+      onMouseEnter={() => setIsMoreHover(true)}
+      onMouseLeave={() => setIsMoreHover(false)}
+      onClick={onMoreClick}
+    >
+      <LinkHoverEffect
+        isHover={isMoreHover}
+        yOffset={2}
+        underlineHeight={2}
+        zoomScale={1.1}
+        useGradient
+      >
+        <div className='flex flex-row align-middle'>
+          <span className='italic'>More</span>
+          <animated.div className='text-xl ml-2 flex flex-col justify-center' style={moreProps} >
+            <IoArrowDown />
+          </animated.div>
+        </div>
+      </LinkHoverEffect>
     </div>
   ]
 

@@ -4,16 +4,19 @@ import Works from './Works';
 import { useRef } from 'react';
 import Cat from './Cat';
 import Contact from './Contact';
-
+import MoreText from './MoreText';
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
+  const moreTextRef = useRef<HTMLDivElement>(null);
   const worksRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (text: string) => {
     if (text === 'Home') {
       homeRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else if (text === 'More') {
+      moreTextRef.current?.scrollIntoView({ behavior: 'smooth' });
     } else if (text === 'Works') {
       worksRef.current?.scrollIntoView({ behavior: 'smooth' });
     } else if (text === 'Résumé') {
@@ -26,7 +29,8 @@ export default function Home() {
   return (
     <div className='justify-center' ref={homeRef}>
       <MenuBar handleClick={handleClick} />
-      <HomeTextLines />
+      <HomeTextLines onMoreClick={()=>handleClick('More')}/>
+      <MoreText scrollRef={moreTextRef} />
       <Works scrollRef={worksRef} />
       <Contact scrollRef={contactRef} />
       <Cat />
