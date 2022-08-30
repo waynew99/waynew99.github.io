@@ -55,7 +55,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
         zoomScale={1.1}
         useGradient
       >
-        <div className='flex flex-row align-middle'>
+        <div className='flex'>
           <span className='italic'>More</span>
           <animated.div className='text-xl ml-2 flex flex-col justify-center' style={moreProps} >
             <IoArrowDown />

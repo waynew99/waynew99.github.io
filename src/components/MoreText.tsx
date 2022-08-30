@@ -1,7 +1,5 @@
 import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
-import LinkHoverEffect from '../Animations/LinkHoverEffect';
-import Gradient from 'rgt';
 
 interface MoreTextProps {
   scrollRef: React.RefObject<HTMLDivElement>;
