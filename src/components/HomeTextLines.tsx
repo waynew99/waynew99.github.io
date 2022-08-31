@@ -1,9 +1,10 @@
 import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
-import Gradient from 'rgt';
 import { useSpring, animated } from '@react-spring/web';
 import { IoArrowDown } from 'react-icons/io5';
+import GradientText from '../Animations/GradientText';
+import data from '../Data/data.json';
 
 
 export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void }) {
@@ -34,10 +35,11 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
           useGradient
         >
           <div className='flex flex-row mr-20 font-bold italic'>
-            <Gradient dir="left-to-right" from="#F72585" to="#4CC9F0">Middlebury,</Gradient>
-            <div className='ml-4' >
-              <Gradient dir="left-to-right" from="#14532D" to="#14532D">Vermont.</Gradient>
-            </div>
+            <GradientText gradientName='myColor'>
+              <span>Middlebury, </span>
+            </GradientText>
+            &nbsp;
+            <span className='text-[#14532D]'>Vermont.</span>
           </div>
         </LinkHoverEffect>
       </a>

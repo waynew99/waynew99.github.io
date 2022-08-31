@@ -1,5 +1,7 @@
 import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
+import GradientText from '../Animations/GradientText';
+import _ from 'lodash';
 
 interface MoreTextProps {
   scrollRef: React.RefObject<HTMLDivElement>;
@@ -7,28 +9,46 @@ interface MoreTextProps {
 }
 
 export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
-  const [linesVisibility, setLinesVisibility] = useState(Array(6).fill(false));
+  const [linesVisibility, setLinesVisibility] = useState(Array(5).fill(false));
+
 
   const textLines = [
     <p>
-      I'm a CS major super senior-feb at Middlebury College.
+      I'm a
+      <GradientText text=' Computer Science ' />
+      major super senior-feb at Middlebury College.
     </p>,
     <p>
-      I love exploring and researching <span className='font-bold'>operating systems</span>, security, networking, and other tech infrastructures, as the ins-and-outs of systems fascinate me.
+      I love exploring and researching
+      <GradientText text=' operating systems' />
+      , security, networking, and other tech infrastructures, as the ins-and-outs of systems fascinate me.
     </p>,
     <p>
-      My concern about how tech impacts society motivates me to build <span className='font-bold'>human-centered</span> and elegant front-end experiences.
+      My concern about how tech impacts society motivates me to build
+      <GradientText text=' human-centered ' />
+      and elegant front-end experiences.
     </p>,
     <p className='mt-8'>
-      Outside of tech, I am also interested in the intricacies of political systems and societies, as I also minor in Political Science.
+      Outside of tech, I am also interested in the intricacies of political systems and societies, as I also minor in <GradientText text=' Political Science' />.
     </p>,
     <p>
-      I'm fortunate to enjoy the companion of two cats back at home, <span className='font-bold'>六六</span> and <span className='font-bold'>小七</span>, who will be thrilled =D if you come visit them through the <span
+      I'm fortunate to enjoy the companion of two <GradientText text=' cats ' />back at home, <GradientText text=' 六六 ' /> and <GradientText text=' 小七 ' />, who will be thrilled if you come visit them through the&nbsp;
+      <span
         onMouseEnter={() => onButtonHover(true)}
         onMouseLeave={() => onButtonHover(false)}
-        >button</span> at the bottom right corner.
+        className='underline underline-offset-2 cursor-pointer'
+      >button</span> at the bottom right corner :D
     </p>
   ]
+
+  /*
+  Testing purpose. To see all gradient choices.
+  textLines.push(...Object.entries(data.gradients).map(([key, value]) => (
+    <p>
+      <GradientText text={key} gradientName={key}/>
+    </p>
+  )));
+  */
 
   useEffect(() => {
     setTimeout(() => {

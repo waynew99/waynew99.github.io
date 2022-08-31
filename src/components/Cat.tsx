@@ -15,7 +15,7 @@ export default function Cat({ zoomCat }: { zoomCat: boolean }) {
   };
 
   const props = useSpring({
-    scale: isHover ? 1.3 : 1,
+    scale: isHover ? 1.5 : 1,
     boxShadow: isHover ? '0px 0px 5px 3px rgba(0,0,0,0.3)' : '3px 3px 5px 2px rgba(0,0,0,0)',
     config: springConfig
   });
