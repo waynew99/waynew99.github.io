@@ -55,9 +55,12 @@ export default function Contact({ scrollRef }: ContactProps) {
           <div className='mt-10 flex flex-row'>
             {contacts}
           </div>
-          <div className='mt-20'>
-            Made with ❤ by <a className='underline underline-offset-4' href='https://github.com/waynew99' target='_blank'>Wayne Wang</a>
-          </div>
+          <p className='mt-20'>
+          &copy; {new Date().getFullYear()}&nbsp;Made with ❤ by <a className='underline underline-offset-4' href='https://github.com/waynew99' target='_blank'>Wayne Wang</a>
+          </p>
+          <p className='mt-2'>
+            Inspired by <a className='underline underline-offset-4' href='https://github.com/chetanverma16/react-portfolio-template' target='_blank'>Chetan</a>
+          </p>
         </div>
       </Waypoint>
     </div>
