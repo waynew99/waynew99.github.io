@@ -25,7 +25,7 @@ export default function WorkCard({ img, title, description, onClick }: WorkCardP
         </div>
         <div className='w-fit'>
           <LinkHoverEffect isHover={isHover} yOffset={10} underlineHeight={2} useGradient>
-            <h1 className='mt-5 text-3xl font-medium mr-6'> {title ?? 'Project Name'} </h1>
+            <h1 className='mt-5 text-3xl font-medium'> {title ?? 'Project Name'} </h1>
           </LinkHoverEffect>
         </div>
         <div className='w-fit'>

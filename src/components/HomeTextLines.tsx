@@ -4,8 +4,6 @@ import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import { useSpring, animated } from '@react-spring/web';
 import { IoArrowDown } from 'react-icons/io5';
 import GradientText from '../Animations/GradientText';
-import data from '../Data/data.json';
-
 
 export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void }) {
   const [linesVisibility, setLinesVisibility] = useState(Array(5).fill(false));
@@ -22,7 +20,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
     <p> I'm Wayne Wang - student, </p>,
     <p> developer, and researcher based at</p>,
     <div
-      className={'w-fit'}
+      className={'w-fit italic'}
       onMouseEnter={() => setIsLocationHover(true)}
       onMouseLeave={() => setIsLocationHover(false)}
     >
@@ -34,12 +32,12 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
           zoomScale={1.1}
           useGradient
         >
-          <div className='flex flex-row mr-20 font-bold italic'>
+          <div className='flex flex-row'>
             <GradientText gradientName='myColor'>
               <span>Middlebury, </span>
             </GradientText>
             &nbsp;
-            <span className='text-[#14532D]'>Vermont.</span>
+            <span className='text-[#14532D] font-bold'>Vermont.</span>
           </div>
         </LinkHoverEffect>
       </a>

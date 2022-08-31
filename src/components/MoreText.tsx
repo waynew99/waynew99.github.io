@@ -1,7 +1,6 @@
 import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import GradientText from '../Animations/GradientText';
-import _ from 'lodash';
 
 interface MoreTextProps {
   scrollRef: React.RefObject<HTMLDivElement>;

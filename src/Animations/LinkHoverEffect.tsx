@@ -11,8 +11,6 @@ interface LinkHoverProps {
 }
 
 const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScale=1, useGradient=false, lineColor='bg-black' }: LinkHoverProps) => {
-
-
   
   const config =  {
     mass: 1,
@@ -21,6 +19,7 @@ const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScal
   }
 
   const underlineProps = useSpring({
+    scale: isHover ? zoomScale : 1,
     opacity: isHover ? 1 : 0,
     width: isHover ? '100%' : '0%',
     config
