@@ -10,11 +10,12 @@ interface WorkCardProps {
     paper?: string,
     presentation?: string,
     repo?: string,
-  }
+  },
+  tags: string[],
   onClick: () => void,
 }
 
-export default function WorkCard({ img, title, description, extraInfo, onClick }: WorkCardProps) {
+export default function WorkCard({ img, title, description, extraInfo, tags, onClick }: WorkCardProps) {
   const [isHover, setIsHover] = useState(false);
   const [paperHover, setIsPaperHover] = useState(false);
   const [presentationHover, setIsPresentationHover] = useState(false);
@@ -77,6 +78,11 @@ export default function WorkCard({ img, title, description, extraInfo, onClick }
           </div>
         ) : <></>
       }
+      <div className='ml-2 mt-2 flex flex-row flex-wrap text-sm'>
+        {tags.map((tag, index) => (
+          <span key={index} className='mr-2 bg-slate-200 rounded px-2 py-1'> {tag} </span>
+        ))}
+      </div>
     </div>
   );
 }

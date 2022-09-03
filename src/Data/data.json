@@ -9,7 +9,13 @@
             "extraInfo": {
                 "paper": "https://github.com/gangtan/LangSec-papers-and-slides/raw/main/langsec22/papers/Wang_LangSec22.pdf",
                 "presentation": "https://github.com/gangtan/LangSec-papers-and-slides/raw/main/langsec22/slides/Wang_LangSec22_slides.pdf"
-            }
+            },
+            "tags": [
+                "C",
+                "System kernel",
+                "Research",
+                "Security"
+            ]
         },
         {
             "id": 2,
@@ -19,7 +25,12 @@
             "img": "/econsims.png",
             "extraInfo": {
                 "repo": "https://github.com/ProfessorAmanda/econsimulations"
-            }
+            },
+            "tags": [
+                "React.js",
+                "TypeScript",
+                "Education"
+            ]
         },
         {
             "id": 3,
@@ -29,7 +40,13 @@
             "url": "https://mimdb.herokuapp.com/",
             "extraInfo": {
                 "repo": "https://github.com/waynew99/mimdb"
-            }
+            },
+            "tags": [
+                "React.js",
+                "Next.js",
+                "PostgreSQL",
+                "JavaScript"
+            ]
         },
         {
             "id": 4,
@@ -39,7 +56,12 @@
             "img": "/codedash.png",
             "extraInfo": {
                 "repo": "https://github.com/csci0466-s22/project-codedash"
-            }
+            },
+            "tags": [
+                "React Native",
+                "Expo",
+                "TypeScript"
+            ]
         },
         {
             "id": 5,
@@ -50,7 +72,14 @@
             "extraInfo": {
                 "paper": "/Wang_Yang_Paper.pdf",
                 "repo": "https://github.com/Cliffy2000/basketball-ai"
-            }
+            },
+            "tags": [
+                "AI",
+                "Neural Network",
+                "Unity",
+                "C#",
+                "Python"
+            ]
         }
     ],
     "contacts": [
