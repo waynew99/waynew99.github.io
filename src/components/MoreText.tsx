@@ -20,7 +20,7 @@ export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
     </p>,
     <p>
       I love exploring and researching
-      <GradientText text=' operating systems' />
+      <GradientText text=' operating system kernels' />
       , security, networking, and other tech infrastructures, as the ins-and-outs of systems fascinate me.
     </p>,
     <p>
