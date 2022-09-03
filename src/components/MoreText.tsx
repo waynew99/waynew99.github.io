@@ -1,6 +1,7 @@
 import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import GradientText from '../Animations/GradientText';
+import { Waypoint } from 'react-waypoint';
 
 interface MoreTextProps {
   scrollRef: React.RefObject<HTMLDivElement>;
@@ -9,7 +10,7 @@ interface MoreTextProps {
 
 export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
   const [linesVisibility, setLinesVisibility] = useState(Array(5).fill(false));
-
+  const [isOnScreen, setIsOnScreen] = useState(false);
 
   const textLines = [
     <p>
@@ -50,18 +51,20 @@ export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
   */
 
   useEffect(() => {
-    setTimeout(() => {
-      for (let i = 0; i < linesVisibility.length; i++) {
-        setTimeout(() => {
-          setLinesVisibility(prevState => {
-            const newState = [...prevState];
-            newState[i] = true;
-            return newState;
-          });
-        }, i * 300);
-      }
-    }, 300);
-  }, []);
+    if (isOnScreen) {
+      setTimeout(() => {
+        for (let i = 0; i < linesVisibility.length; i++) {
+          setTimeout(() => {
+            setLinesVisibility(prevState => {
+              const newState = [...prevState];
+              newState[i] = true;
+              return newState;
+            });
+          }, i * 300);
+        }
+      }, 300);
+    }
+  }, [isOnScreen]);
 
   const textLinesAnimated = textLines.map((text, index) => (
     <div key={index}>
@@ -74,7 +77,11 @@ export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
 
   return (
     <div ref={scrollRef} className={'px-20 pt-48 h-screen text-left text-2xl leading-relaxed'}>
-      {textLinesAnimated}
+      <Waypoint onEnter={() => { setIsOnScreen(true) }}>
+        <div>
+          {textLinesAnimated}
+        </div>
+      </Waypoint>
     </div>
   );
 }
