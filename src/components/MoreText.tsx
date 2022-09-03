@@ -16,7 +16,7 @@ export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
     <p>
       I'm a
       <GradientText text=' Computer Science ' />
-      major super senior-feb at Middlebury College.
+      major super senior-Feb at Middlebury College.
     </p>,
     <p>
       I love exploring and researching
