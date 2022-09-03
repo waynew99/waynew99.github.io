@@ -51,7 +51,7 @@ export default function Works({ scrollRef }: WorksProps) {
         <Waypoint onEnter={() => {
           setIsOnScreen(true);
         }}>
-          <div className='mt-10 mx-60 grid grid-cols-2 grid-rows-2 gap-20'>
+          <div className='mt-10 mx-60 grid grid-cols-2 grid-rows-2 gap-x-20 gap-y-16'>
             {wordCards}
           </div>
         </Waypoint>

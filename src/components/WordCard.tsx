@@ -9,6 +9,7 @@ interface WorkCardProps {
   extraInfo?: {
     paper?: string,
     presentation?: string,
+    repo?: string,
   }
   onClick: () => void,
 }
@@ -17,6 +18,7 @@ export default function WorkCard({ img, title, description, extraInfo, onClick }
   const [isHover, setIsHover] = useState(false);
   const [paperHover, setIsPaperHover] = useState(false);
   const [presentationHover, setIsPresentationHover] = useState(false);
+  const [repoHover, setIsRepoHover] = useState(false);
 
   return (
     <div>
@@ -45,24 +47,33 @@ export default function WorkCard({ img, title, description, extraInfo, onClick }
       {
         extraInfo ? (
           <div className='flex flex-row'>
-            <div 
+            {extraInfo.paper ? <div
               className='mx-2'
-              onMouseEnter={() => setIsPaperHover(true)} 
+              onMouseEnter={() => setIsPaperHover(true)}
               onMouseLeave={() => setIsPaperHover(false)}
             >
               <LinkHoverEffect isHover={paperHover} yOffset={1} underlineHeight={2} zoomScale={1.2} useGradient>
-                <a href={extraInfo.paper} target='_blank' rel='noreferrer'> Paper </a>
+                <a href={`${extraInfo.paper.includes('http') ? '' : process.env.PUBLIC_URL}${extraInfo.paper}`} target='_blank' rel='noreferrer'> Paper </a>
               </LinkHoverEffect>
-            </div>
-            <div 
+            </div> : <></>}
+            {extraInfo.presentation ? <div
               className='mx-2'
               onMouseEnter={() => setIsPresentationHover(true)}
               onMouseLeave={() => setIsPresentationHover(false)}
             >
               <LinkHoverEffect isHover={presentationHover} yOffset={1} underlineHeight={2} zoomScale={1.2} useGradient>
-                <a href={extraInfo.presentation} target='_blank' rel='noreferrer'> Presentation </a>
+                <a href={`${extraInfo.presentation.includes('http') ? '' : process.env.PUBLIC_URL}${extraInfo.presentation}`} target='_blank' rel='noreferrer'> Presentation </a>
               </LinkHoverEffect>
-            </div>
+            </div> : <></>}
+            {extraInfo.repo ? <div
+              className='mx-2'
+              onMouseEnter={() => setIsRepoHover(true)}
+              onMouseLeave={() => setIsRepoHover(false)}
+            >
+              <LinkHoverEffect isHover={repoHover} yOffset={1} underlineHeight={2} zoomScale={1.2} useGradient>
+                <a href={`${extraInfo.repo.includes('http') ? '' : process.env.PUBLIC_URL}${extraInfo.repo}`} target='_blank' rel='noreferrer'> Repo </a>
+              </LinkHoverEffect>
+            </div> : <></>}
           </div>
         ) : <></>
       }

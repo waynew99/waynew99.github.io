@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "LangSec",
-            "description": "Language-theoretic Security: The View from the Tower of Babel",
+            "description": "Research paper published at The Eighth Workshop on LangSec at the IEEE CS S&P",
             "url": "http://langsec.org/spw22/papers.html/",
             "img": "/langsec.png",
             "extraInfo": {
@@ -16,21 +16,41 @@
             "title": "Econ Simulations",
             "description": "An interactive educational application to simulate statistical and economic concepts.",
             "url": "https://www.econsims.org/",
-            "img": "/econsims.png"
+            "img": "/econsims.png",
+            "extraInfo": {
+                "repo": "https://github.com/ProfessorAmanda/econsimulations"
+            }
         },
         {
             "id": 3,
             "title": "MIMDB",
             "description": "This is a Movie Information Database",
             "img": "/mimdb.png",
-            "url": "https://mimdb.herokuapp.com/"
+            "url": "https://mimdb.herokuapp.com/",
+            "extraInfo": {
+                "repo": "https://github.com/waynew99/mimdb"
+            }
         },
         {
             "id": 4,
             "title": "CodeDash",
             "description": "Another social media... but using ONLY CODE!",
             "url": "https://expo.dev/@waynew99/codedash?serviceType=classic&distribution=expo-go",
-            "img": "/codedash.png"
+            "img": "/codedash.png",
+            "extraInfo": {
+                "repo": "https://github.com/csci0466-s22/project-codedash"
+            }
+        },
+        {
+            "id": 5,
+            "title": "Genetic Algorithm: Premature Convergence Prevention",
+            "description": "Final project for CS0311: Artificial Intelligence ",
+            "url": "https://github.com/Cliffy2000/basketball-ai",
+            "img": "/basketball-ai.png",
+            "extraInfo": {
+                "paper": "/Wang_Yang_Paper.pdf",
+                "repo": "https://github.com/Cliffy2000/basketball-ai"
+            }
         }
     ],
     "contacts": [
@@ -38,7 +58,7 @@
             "id": 1,
             "name": "Email",
             "value": "me@waynewang.me",
-            "url": "mailto:sw@middlebury.edu?subject=Hi Wayne!",
+            "url": "mailto:wayne.99@outlook.com?subject=Hi Wayne!",
             "icon_name": "email"
         },
         {
