@@ -37,6 +37,7 @@ export default function Works({ scrollRef }: WorksProps) {
           title={project.title}
           description={project.description}
           onClick={() => window.open(project.url)}
+          extraInfo={project.extraInfo}
         />
       </FadeInEffect>
     </div>

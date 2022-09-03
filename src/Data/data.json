@@ -5,7 +5,11 @@
             "title": "LangSec",
             "description": "Language-theoretic Security: The View from the Tower of Babel",
             "url": "http://langsec.org/spw22/papers.html/",
-            "img": "/langsec.png"
+            "img": "/langsec.png",
+            "extraInfo": {
+                "paper": "https://github.com/gangtan/LangSec-papers-and-slides/raw/main/langsec22/papers/Wang_LangSec22.pdf",
+                "presentation": "https://github.com/gangtan/LangSec-papers-and-slides/raw/main/langsec22/slides/Wang_LangSec22_slides.pdf"
+            }
         },
         {
             "id": 2,
