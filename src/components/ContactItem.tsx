@@ -27,7 +27,7 @@ export default function ContactItem({ text, icon, url }: { text: string, icon: s
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <LinkHoverEffect isHover={isHover} yOffset={2} underlineHeight={2} useGradient>
+      <LinkHoverEffect isHover={isHover} underlineHeight={2} useGradient>
         <a className='flex flex-row' href={url} target="_blank">
           <div className='mr-2 flex flex-col justify-center'>
             {avail_icons.find(ic => ic.name === icon)?.content}

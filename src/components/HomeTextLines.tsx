@@ -27,7 +27,6 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
       <a href='https://www.google.com/maps/place/Middlebury' target="_blank">
         <LinkHoverEffect
           isHover={isLocationHover}
-          yOffset={2}
           underlineHeight={3}
           zoomScale={1.1}
           useGradient
@@ -50,7 +49,6 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
     >
       <LinkHoverEffect
         isHover={isMoreHover}
-        yOffset={2}
         underlineHeight={2}
         zoomScale={1.1}
         useGradient

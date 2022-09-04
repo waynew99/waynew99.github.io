@@ -2,17 +2,16 @@ import { animated, useSpring } from '@react-spring/web'
 
 interface LinkHoverProps {
   isHover: boolean,
-  children: React.ReactElement,
-  yOffset: number
-  underlineHeight: number
+  children: React.ReactElement
+  underlineHeight: number | string,
   zoomScale?: number
   useGradient?: boolean
   lineColor?: string
 }
 
-const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScale=1, useGradient=false, lineColor='bg-black' }: LinkHoverProps) => {
-  
-  const config =  {
+const LinkHoverEffect = ({ isHover, children, underlineHeight, zoomScale = 1, useGradient = false, lineColor = '' }: LinkHoverProps) => {
+
+  const config = {
     mass: 1,
     tension: 200,
     friction: 30
@@ -37,13 +36,13 @@ const LinkHoverEffect = ({ isHover, children, yOffset, underlineHeight, zoomScal
       <animated.div style={textProps}>
         {children}
       </animated.div>
-      <animated.div 
-        className={`-translate-y-${yOffset} ${myLineColor}`}
+      <animated.div
+        className={myLineColor}
         style={{
-        ...underlineProps,
-        position: 'relative',
-        height: `${underlineHeight}px`,
-      }} />
+          ...underlineProps,
+          position: 'relative',
+          height: `${underlineHeight}px`,
+        }} />
 
     </div>
 

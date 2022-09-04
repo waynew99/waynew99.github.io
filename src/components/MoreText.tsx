@@ -2,6 +2,7 @@ import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
 import GradientText from '../Animations/GradientText';
 import { Waypoint } from 'react-waypoint';
+import LinkHoverEffect from '../Animations/LinkHoverEffect';
 
 interface MoreTextProps {
   scrollRef: React.RefObject<HTMLDivElement>;
@@ -11,42 +12,53 @@ interface MoreTextProps {
 export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
   const [linesVisibility, setLinesVisibility] = useState(Array(5).fill(false));
   const [isOnScreen, setIsOnScreen] = useState(false);
+  const [isMiddleburyHover, setIsMiddleburyHover] = useState(false);
 
   const textLines = [
-    <p>
+    <div>
       I'm a
       <GradientText text=' Computer Science ' />
-      major super senior-Feb at Middlebury College.
-    </p>,
-    <p>
+      major super senior-Feb (aka. one semester left) at&nbsp;
+      <a href='https://www.middlebury.edu/' target='_blank' rel='noreferrer'
+        onMouseEnter={() => setIsMiddleburyHover(true)}
+        onMouseLeave={() => setIsMiddleburyHover(false)}
+        className='inline-block'
+      >
+        <LinkHoverEffect isHover={isMiddleburyHover} underlineHeight={2} useGradient>
+          <GradientText text=' Middlebury College ' />
+        </LinkHoverEffect>
+      </a>
+      .
+    </div>,
+    <div>
       I love exploring and researching
       <GradientText text=' operating system kernels' />
       , security, networking, and other tech infrastructures, as the ins-and-outs of systems fascinate me.
-    </p>,
-    <p>
+    </div>,
+    <div>
       My concern about how tech impacts society motivates me to build
       <GradientText text=' human-centered ' />
       and elegant front-end experiences.
-    </p>,
-    <p className='mt-8'>
+    </div>,
+    <div className='mt-8'>
       Outside of tech, I am also interested in the intricacies of political systems and societies, as I also minor in <GradientText text=' Political Science' />.
-    </p>,
-    <p>
-      I'm fortunate to enjoy the companion of two <GradientText text=' cats ' />back at home, <GradientText text=' 六六 ' /> and <GradientText text=' 小七 ' />, who will be thrilled if you come visit them through the&nbsp;
+    </div>,
+    <div>
+      I'm fortunate to enjoy the companion of two <GradientText text=' cats ' />back at home, <GradientText text=' 六六 (Liu-Liu)' /> and <GradientText text=' 小七 (Xiao-Qi)' />, who will be thrilled if you could pay a visit by clicking the&nbsp;
       <span
         onMouseEnter={() => onButtonHover(true)}
         onMouseLeave={() => onButtonHover(false)}
-        className='underline underline-offset-2 cursor-pointer'
+        className='underline underline-offset-2'
       >button</span> at the bottom right corner :D
-    </p>
+    </div>
   ]
 
   /*
   Testing purpose. To see all gradient choices.
   textLines.push(...Object.entries(data.gradients).map(([key, value]) => (
-    <p>
+    <div>
       <GradientText text={key} gradientName={key}/>
-    </p>
+    </div>
   )));
   */
 
@@ -76,7 +88,7 @@ export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
 
 
   return (
-    <div ref={scrollRef} className={'px-20 pt-48 h-screen text-left text-2xl leading-relaxed'}>
+    <div ref={scrollRef} className={'pl-20 pr-24 pt-48 h-screen text-left text-2xl leading-relaxed'}>
       <Waypoint onEnter={() => { setIsOnScreen(true) }}>
         <div>
           {textLinesAnimated}

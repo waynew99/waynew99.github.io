@@ -11,7 +11,7 @@ export default function MenuBarItem({ text, onClick, lineColor }: { text: string
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <LinkHoverEffect isHover={isHover} yOffset={1} underlineHeight={2} lineColor={lineColor}>
+      <LinkHoverEffect isHover={isHover} underlineHeight={2} lineColor={lineColor}>
         <>{text}</>
       </LinkHoverEffect>
     </a>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import FadeInEffect from '../Animations/FadeInEffect';
 import data from '../Data/data.json';
-import WorkCard from './WordCard';
+import WorkCard from './WorkCard';
 import { Waypoint } from 'react-waypoint';
 
 interface WorksProps {

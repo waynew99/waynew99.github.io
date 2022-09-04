@@ -34,12 +34,12 @@ export default function WorkCard({ img, title, description, extraInfo, tags, onC
             <img className='h-full w-full object-cover' alt={title} src={process.env.PUBLIC_URL + img} />
           </div>
           <div className='w-fit'>
-            <LinkHoverEffect isHover={isHover} yOffset={10} underlineHeight={2} useGradient>
+            <LinkHoverEffect isHover={isHover} underlineHeight={2} useGradient>
               <h1 className='mt-5 text-3xl font-medium'> {title ?? 'Project Name'} </h1>
             </LinkHoverEffect>
           </div>
           <div className='w-fit'>
-            <LinkHoverEffect isHover={isHover} yOffset={1} underlineHeight={2} lineColor={'bg-gray-600'}>
+            <LinkHoverEffect isHover={isHover} underlineHeight={2} lineColor={'bg-gray-600'}>
               <h2 className='text-xl text-gray-600'> {description ?? 'Description'} </h2>
             </LinkHoverEffect>
           </div>
@@ -47,13 +47,13 @@ export default function WorkCard({ img, title, description, extraInfo, tags, onC
       </CardHoverEffect>
       {
         extraInfo ? (
-          <div className='flex flex-row'>
+          <div className='flex flex-row text-gray-600 underline underline-offset-[5px]'>
             {extraInfo.paper ? <div
               className='mx-2'
               onMouseEnter={() => setIsPaperHover(true)}
               onMouseLeave={() => setIsPaperHover(false)}
             >
-              <LinkHoverEffect isHover={paperHover} yOffset={1} underlineHeight={2} zoomScale={1.2} useGradient>
+              <LinkHoverEffect isHover={paperHover} underlineHeight={2} zoomScale={1.2} useGradient>
                 <a href={`${extraInfo.paper.includes('http') ? '' : process.env.PUBLIC_URL}${extraInfo.paper}`} target='_blank' rel='noreferrer'> Paper </a>
               </LinkHoverEffect>
             </div> : <></>}
@@ -62,7 +62,7 @@ export default function WorkCard({ img, title, description, extraInfo, tags, onC
               onMouseEnter={() => setIsPresentationHover(true)}
               onMouseLeave={() => setIsPresentationHover(false)}
             >
-              <LinkHoverEffect isHover={presentationHover} yOffset={1} underlineHeight={2} zoomScale={1.2} useGradient>
+              <LinkHoverEffect isHover={presentationHover} underlineHeight={2} zoomScale={1.2} useGradient>
                 <a href={`${extraInfo.presentation.includes('http') ? '' : process.env.PUBLIC_URL}${extraInfo.presentation}`} target='_blank' rel='noreferrer'> Presentation </a>
               </LinkHoverEffect>
             </div> : <></>}
@@ -71,7 +71,7 @@ export default function WorkCard({ img, title, description, extraInfo, tags, onC
               onMouseEnter={() => setIsRepoHover(true)}
               onMouseLeave={() => setIsRepoHover(false)}
             >
-              <LinkHoverEffect isHover={repoHover} yOffset={1} underlineHeight={2} zoomScale={1.2} useGradient>
+              <LinkHoverEffect isHover={repoHover} underlineHeight={2} zoomScale={1.2} useGradient>
                 <a href={`${extraInfo.repo.includes('http') ? '' : process.env.PUBLIC_URL}${extraInfo.repo}`} target='_blank' rel='noreferrer'> Repo </a>
               </LinkHoverEffect>
             </div> : <></>}

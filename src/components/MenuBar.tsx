@@ -21,7 +21,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
   }
 
   const menuBarItems = menuBarItemTexts.map((text) => (
-    <MenuBarItem key={text} text={text} onClick={handleMenuBarItemClick} lineColor={'bg-black'} />
+    <MenuBarItem key={text} text={text} onClick={handleMenuBarItemClick} />
   ));
 
   return (
@@ -33,7 +33,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
           onMouseEnter={() => setIsLogoHover(true)}
           onMouseLeave={() => setIsLogoHover(false)}
         >
-          <LinkHoverEffect isHover={isLogoHover} yOffset={1} underlineHeight={0} zoomScale={1.3} >
+          <LinkHoverEffect isHover={isLogoHover} underlineHeight={2} zoomScale={1.3} >
             <img className={'ml-12 w-20 h-20'} src={`${process.env.PUBLIC_URL}/logoBlack.png`} alt='logo' />
           </LinkHoverEffect>
         </a>
