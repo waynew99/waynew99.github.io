@@ -80,7 +80,7 @@ export default function WorkCard({ img, title, description, extraInfo, tags, onC
       }
       <div className='ml-2 mt-2 flex flex-row flex-wrap text-sm'>
         {tags.map((tag, index) => (
-          <span key={index} className='mr-2 bg-slate-200 rounded px-2 py-1'> {tag} </span>
+          <span key={index} className='mr-2 mb-2 bg-slate-200 rounded px-2 py-1'> {tag} </span>
         ))}
       </div>
     </div>

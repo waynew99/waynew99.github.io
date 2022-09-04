@@ -42,7 +42,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
       </a>
     </div>,
     <div
-      className={'w-fit text-2xl mt-8 cursor-pointer'}
+      className={'w-fit text-lg sm:text-2xl mt-8 cursor-pointer'}
       onMouseEnter={() => setIsMoreHover(true)}
       onMouseLeave={() => setIsMoreHover(false)}
       onClick={onMoreClick}
@@ -87,7 +87,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
 
 
   return (
-    <div className={'pl-20 pt-64 h-screen text-left text-5xl leading-relaxed'}>
+    <div className={'pl-8 sm:pl-20 pt-48 sm:pt-64 h-screen text-left text-2xl sm:text-5xl leading-relaxed sm:leading-relaxed h-fit'}>
       {textLinesAnimated}
     </div>
   );

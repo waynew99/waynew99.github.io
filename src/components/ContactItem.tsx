@@ -23,7 +23,7 @@ export default function ContactItem({ text, icon, url }: { text: string, icon: s
 
   return (
     <div
-      className={'mr-16 cursor-pointer'}
+      className={'mt-4 sm:mt-0 mr-0 sm:mr-16 cursor-pointer'}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >

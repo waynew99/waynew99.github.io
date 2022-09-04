@@ -46,17 +46,15 @@ export default function Works({ scrollRef }: WorksProps) {
   ));
 
   return (
-    <div>
-      <div ref={scrollRef} className='pt-36'>
-        <h1 className='ml-20 text-4xl text-bold'>Works</h1>
-        <Waypoint onEnter={() => {
-          setIsOnScreen(true);
-        }}>
-          <div className='mt-10 mx-60 grid grid-cols-2 grid-rows-2 gap-x-20 gap-y-16'>
-            {wordCards}
-          </div>
-        </Waypoint>
-      </div>
-    </div >
+    <div ref={scrollRef} className='mt-8 sm:mt-24 pt-32 sm:pt-36'>
+      <h1 className='ml-8 sm:ml-20 text-4xl text-bold'>Works</h1>
+      <Waypoint onEnter={() => {
+        setIsOnScreen(true);
+      }}>
+        <div className='mt-10 mx-10 sm:mx-60 grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-x-20 gap-y-16'>
+          {wordCards}
+        </div>
+      </Waypoint>
+    </div>
   );
 }

@@ -44,15 +44,15 @@ export default function Contact({ scrollRef }: ContactProps) {
 
   return (
     <div ref={scrollRef} className='pt-48'>
-      <h1 className='ml-20 text-4xl text-bold'>Contact</h1>
+      <h1 className='ml-8 sm:ml-20 text-4xl text-bold'>Contact</h1>
       <Waypoint onEnter={() => {
         setIsOnScreen(true);
       }}>
-        <div className='ml-20'>
+        <div className='ml-8 sm:ml-20'>
           <FadeInEffect isVisible={contactVisibility[0]}>
             <p className='mt-10 text-6xl'>Let's connect!</p>
           </FadeInEffect>
-          <div className='mt-10 flex flex-row'>
+          <div className='mt-10 flex flex-col md:flex-row'>
             {contacts}
           </div>
           <p className='mt-20'>

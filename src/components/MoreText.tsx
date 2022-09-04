@@ -88,7 +88,7 @@ export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
 
 
   return (
-    <div ref={scrollRef} className={'pl-20 pr-24 pt-48 h-screen text-left text-2xl leading-relaxed'}>
+    <div ref={scrollRef} className={'pl-8 sm:pl-20 pr-12 sm:pr-24 mt-36 pt-32 sm:mt-8 sm:pt-48 h-screen text-left text-xl sm:text-2xl leading-relaxed sm:leading-relaxed h-fit'}>
       <Waypoint onEnter={() => { setIsOnScreen(true) }}>
         <div>
           {textLinesAnimated}
