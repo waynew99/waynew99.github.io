@@ -6,7 +6,7 @@ export default function MenuBarItem({ text, onClick, lineColor }: { text: string
 
   return (
     <a
-      className={'mr-10 text-lg cursor-pointer'}
+      className={'mr-4 sm:mr-10 text-lg cursor-pointer'}
       onClick={() => onClick(text)}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}

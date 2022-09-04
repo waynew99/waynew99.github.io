@@ -28,7 +28,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
     <div className='fixed top-0 z-10 w-full flex flex-col'>
       <div className='pt-6 flex flex-row justify-between items-center bg-white'>
         <a
-          className='cursor-pointer'
+          className='cursor-pointer invisible sm:visible'
           onClick={() => handleMenuBarItemClick('Home')}
           onMouseEnter={() => setIsLogoHover(true)}
           onMouseLeave={() => setIsLogoHover(false)}
@@ -38,7 +38,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
           </LinkHoverEffect>
         </a>
 
-        <div className={'mr-10 flex justify-end align-middle'}>
+        <div className={'mr-4 md:mr-10 flex justify-end align-middle'}>
           {menuBarItems}
         </div>
       </div>
