@@ -21,7 +21,7 @@ export default function Cat({ zoomCat }: { zoomCat: boolean }) {
   });
 
   return (
-    <div className='sticky bottom-0 right-0 flex justify-end'>
+    <div className='fixed bottom-0 right-0 flex justify-end'>
       <a href='https://www.instagram.com/lifeofliuqi67/' target='_blank' rel='noreferrer' >
         <animated.div className={'w-20 h-20 mr-4 sm:mr-10 mb-4 sm:mb-10 rounded-full'} style={props}>
           <img

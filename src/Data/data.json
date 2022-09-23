@@ -4,10 +4,10 @@
             "id": 1,
             "title": "LangSec",
             "description": "Research paper published at The Eighth Workshop on LangSec at the IEEE CS S&P",
-            "url": "http://langsec.org/spw22/papers.html/",
+            "url": "https://ieeexplore.ieee.org/abstract/document/9833857",
             "img": "/langsec.png",
             "extraInfo": {
-                "paper": "https://github.com/gangtan/LangSec-papers-and-slides/raw/main/langsec22/papers/Wang_LangSec22.pdf",
+                "paper": "https://ieeexplore.ieee.org/abstract/document/9833857",
                 "presentation": "https://github.com/gangtan/LangSec-papers-and-slides/raw/main/langsec22/slides/Wang_LangSec22_slides.pdf"
             },
             "tags": [
@@ -20,7 +20,7 @@
         {
             "id": 2,
             "title": "Econ Simulations",
-            "description": "An interactive educational application to simulate statistical and economic concepts.",
+            "description": "Interactive educational application to simulate statistical and economic concepts",
             "url": "https://www.econsims.org/",
             "img": "/econsims.png",
             "extraInfo": {
@@ -35,7 +35,7 @@
         {
             "id": 3,
             "title": "MIMDB",
-            "description": "This is a Movie Information Database",
+            "description": "Content hosting and display platform for Middlebury College Film Department",
             "img": "/mimdb.png",
             "url": "https://mimdb.herokuapp.com/",
             "extraInfo": {
@@ -50,23 +50,8 @@
         },
         {
             "id": 4,
-            "title": "CodeDash",
-            "description": "Another social media... but using ONLY CODE!",
-            "url": "https://expo.dev/@waynew99/codedash?serviceType=classic&distribution=expo-go",
-            "img": "/codedash.png",
-            "extraInfo": {
-                "repo": "https://github.com/csci0466-s22/project-codedash"
-            },
-            "tags": [
-                "React Native",
-                "Expo",
-                "TypeScript"
-            ]
-        },
-        {
-            "id": 5,
             "title": "Genetic Algorithm: Premature Convergence Prevention",
-            "description": "Final project for CS0311: Artificial Intelligence ",
+            "description": "Final project for CS0311: Artificial Intelligence",
             "url": "https://github.com/Cliffy2000/basketball-ai",
             "img": "/basketball-ai.png",
             "extraInfo": {
@@ -80,6 +65,21 @@
                 "C#",
                 "Python"
             ]
+        },
+        {
+            "id": 5,
+            "title": "CodeDash",
+            "description": "Another social media... but using only code!",
+            "url": "https://expo.dev/@waynew99/codedash?serviceType=classic&distribution=expo-go",
+            "img": "/codedash.png",
+            "extraInfo": {
+                "repo": "https://github.com/csci0466-s22/project-codedash"
+            },
+            "tags": [
+                "React Native",
+                "Expo",
+                "TypeScript"
+            ]
         }
     ],
     "contacts": [
@@ -87,7 +87,7 @@
             "id": 1,
             "name": "Email",
             "value": "me@waynewang.me",
-            "url": "mailto:wayne.99@outlook.com?subject=Hi Wayne!",
+            "url": "mailto:me@waynewang.me?subject=Hi Wayne!",
             "icon_name": "email"
         },
         {
@@ -106,10 +106,10 @@
         },
         {
             "id": 4,
-            "name": "Website",
+            "name": "Middlebury, VT",
             "value": "waynewang.me",
-            "url": "https://waynewang.me",
-            "icon_name": "website"
+            "url": "https://www.google.com/maps/place/Middlebury,+VT+05753/",
+            "icon_name": "location"
         }
     ],
     "gradients": {

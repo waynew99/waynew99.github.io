@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
-import { IoLogoGithub, IoLogoLinkedin, IoCallOutline, IoLogoWechat, IoMail, IoGlobeOutline } from 'react-icons/io5';
+import { IoLogoGithub, IoLogoLinkedin, IoCallOutline, IoLogoWechat, IoMail, IoLocationSharp } from 'react-icons/io5';
 
 interface icon {
   name: string,
@@ -15,7 +15,7 @@ const avail_icons: icon[] = [
   { name: 'email', content: <IoMail size={icon_size} /> },
   { name: 'telephone', content: <IoCallOutline size={icon_size} /> },
   { name: 'wechat', content: <IoLogoWechat size={icon_size} /> },
-  { name: 'website', content: <IoGlobeOutline size={icon_size} /> }
+  { name: 'location', content: <IoLocationSharp size={icon_size} /> }
 ];
 
 export default function ContactItem({ text, icon, url }: { text: string, icon: string, url: string }) {

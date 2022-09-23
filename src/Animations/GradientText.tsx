@@ -15,15 +15,6 @@ const GradientText = ({ children, text, gradientName }: { children?: React.React
     }
   }, []);
 
-  /*
-  const gradientObject: { [key: string]: boolean } = {};
-  Object.entries(data.gradients).forEach(([k, v]) => {
-    const newKey = `from-[${v[0]}] ${v.slice(1, v.length - 1).map(c => `via-[${c}]`).join(' ')} to-[${v[v.length - 1]}]`;
-    gradientObject[newKey] = myGradientName === k;
-  });
-  gradientObject['from-black to-black'] = myGradientName === 'black';
-  */
-
   return (
     <span className={classNames('font-bold bg-clip-text text-transparent bg-gradient-to-r', {
       'from-[#feac5e] via-[#c779d0] to-[#4bc0c8]': myGradientName === 'atlas',
