@@ -118,7 +118,7 @@ export default function Contact({ scrollRef }: ContactProps) {
                   <FadeInEffect isVisible={contactVisibility[data.contacts.length + 4]}>
                     <div className='flex flex-col'>
                       <label className='text-xl mt-4'>Message</label>
-                      <Field type='message' name='message' className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2 resize-y h-322' />
+                      <Field type='message' name='message' className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2 resize-y h-32' />
                       <ErrorMessage name='message' component={GradientText} className='text-md font-bold' />
                     </div>
                   </FadeInEffect>
