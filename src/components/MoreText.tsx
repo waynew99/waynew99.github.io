@@ -1,17 +1,14 @@
 import FadeIn from '../Animations/FadeInEffect';
 import { useState, useEffect } from 'react';
-import GradientText from '../Animations/GradientText';
 import { Waypoint } from 'react-waypoint';
-import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import { moreText } from '../Data/text';
 import text2jsx from '../utils/ConvertText2JsxUtil';
 
 interface MoreTextProps {
   scrollRef: React.RefObject<HTMLDivElement>;
-  onButtonHover: (hover: boolean) => void;
 }
 
-export default function MoreText({ scrollRef, onButtonHover }: MoreTextProps) {
+export default function MoreText({ scrollRef }: MoreTextProps) {
   const [linesVisibility, setLinesVisibility] = useState(Array(text2jsx(moreText).length).fill(false));
   const [isOnScreen, setIsOnScreen] = useState(false);
 

@@ -30,8 +30,13 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
   }, []);
 
   const location = (
-    <div className={'w-fit italic'}>
-      <a href='https://www.google.com/maps/place/Middlebury' target="_blank">
+    <div>
+      I'm currently based in &nbsp;
+      <a 
+        href='https://www.google.com/maps/place/Middlebury' 
+        target="_blank" 
+        className='w-fit italic inline-block'
+      >
         <LinkHoverEffect
           underlineHeight={3}
           zoomScale={1.1}
@@ -76,8 +81,8 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
       <div key={index}>
         <FadeIn isVisible={linesVisibility[index]}>
           {
-            line === '*Location*' ? location :
-              line === '*More*' ? more :
+            line === '{Location}' ? location :
+              line === '{More}' ? more :
                 <p>{line}</p>
           }
         </FadeIn>
@@ -86,7 +91,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
 
 
   return (
-    <div className={'pl-8 sm:pl-20 pt-48 sm:pt-64 h-screen text-left text-xl sm:text-4xl leading-relaxed sm:leading-relaxed h-fit'}>
+    <div className={'pl-8 sm:pl-20 pt-48 sm:pt-56 h-screen text-left text-xl sm:text-4xl leading-relaxed sm:leading-relaxed h-fit'}>
       {textLinesAnimated}
     </div>
   );

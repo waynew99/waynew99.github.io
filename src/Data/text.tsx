@@ -1,10 +1,10 @@
 export const introText = `
 Hi there 👋 !
 Investment banker, lawyer, physician, scuba diver,
-- I'm none of these things.
-But I love building software, researching in systems, and am studying at
-*Location*
-*More*`;
+- I'm none of these things,
+but I'm a system researcher and software engineer in the making.
+{Location}
+{More}`;
 
 export const moreText = `
 I'm a *Computer Science* major super senior-Feb (aka. one semester left) at [Middlebury College](https://www.middlebury.edu/).
