@@ -12,4 +12,4 @@ I love exploring and researching *operating system kernels*, security, networkin
 My concern about how tech impacts society motivates me to build *human-centered* and elegant front-end experiences.
 <br />
 Outside of tech, I am also interested in the intricacies of political systems and societies, as I also minor in *Political Science*.
-I'm fortunate to enjoy the companion of two *cats* back at home, *六六 (Liu-Liu)* and *小七 (Xiao-Qi)*, who will be thrilled if you could pay a visit by clicking the *button* at the bottom right corner :D`;
+I'm fortunate to enjoy the companion of two *cats* back at home, *六六 (Liu-Liu)* and *小七 (Xiao-Qi)*, who will be thrilled if you could pay a visit by clicking the button at the bottom right corner :D`;
