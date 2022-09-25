@@ -104,21 +104,25 @@ export default function Contact({ scrollRef }: ContactProps) {
                   <FadeInEffect isVisible={contactVisibility[data.contacts.length + 2]}>
                     <div className='flex flex-col'>
                       <label className='text-xl mt-4'>Name</label>
-                      <Field type='name' name='name' className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2' />
+                      <Field name='name' className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2' />
                       <ErrorMessage name='name' component={GradientText} className='text-md font-bold' />
                     </div>
                   </FadeInEffect>
                   <FadeInEffect isVisible={contactVisibility[data.contacts.length + 3]}>
                     <div className='flex flex-col'>
                       <label className='text-xl mt-4'>Email</label>
-                      <Field type='email' name='email' className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2' />
+                      <Field name='email' className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2' />
                       <ErrorMessage name='email' component={GradientText} className='text-md font-bold' />
                     </div>
                   </FadeInEffect>
                   <FadeInEffect isVisible={contactVisibility[data.contacts.length + 4]}>
                     <div className='flex flex-col'>
                       <label className='text-xl mt-4'>Message</label>
-                      <Field type='message' name='message' className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2 resize-y h-32' />
+                      <Field name='message' >
+                        {({ field }: any) => (
+                          <textarea {...field} className='mt-2 border-2 border-gray-200 focus:outline-none focus:border-gray-400 rounded-md p-2 resize-y h-32'/>
+                        )}
+                      </Field>
                       <ErrorMessage name='message' component={GradientText} className='text-md font-bold' />
                     </div>
                   </FadeInEffect>
