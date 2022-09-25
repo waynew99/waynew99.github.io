@@ -22,7 +22,7 @@ export default function Works({ scrollRef }: WorksProps) {
               newState[i] = true;
               return newState;
             });
-          }, i * 300);
+          }, i * 400);
         }
       }, 500);
     }

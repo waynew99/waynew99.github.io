@@ -12,8 +12,6 @@ export default function Home() {
   const worksRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const [zoomCat, setZoomCat] = useState(false);
-
   const handleClick = (text: string) => {
     if (text === 'Home') {
       homeRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -32,10 +30,10 @@ export default function Home() {
     <div className='justify-center' ref={homeRef}>
       <MenuBar handleClick={handleClick} />
       <HomeTextLines onMoreClick={()=>handleClick('More')}/>
-      <MoreText scrollRef={moreTextRef} onButtonHover={setZoomCat}/>
+      <MoreText scrollRef={moreTextRef} />
       <Works scrollRef={worksRef} />
       <Contact scrollRef={contactRef} />
-      <Cat zoomCat={zoomCat} />
+      <Cat />
     </div>
   );
 }

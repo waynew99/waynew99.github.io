@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react';
 import { animated, useSpring } from '@react-spring/web'
 
-export default function Cat({ zoomCat }: { zoomCat: boolean }) {
+export default function Cat() {
   const [isHover, setIsHover] = useState(false);
-
-  useEffect(() => {
-    setIsHover(zoomCat);
-  }, [zoomCat]);
 
   const springConfig = {
     mass: 1,

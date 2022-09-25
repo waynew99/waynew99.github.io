@@ -1,13 +1,13 @@
 import FadeIn from '../Animations/FadeInEffect';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactElement } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import { useSpring, animated } from '@react-spring/web';
 import { IoArrowDown } from 'react-icons/io5';
 import GradientText from '../Animations/GradientText';
+import { introText } from '../Data/text';
 
 export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void }) {
-  const [linesVisibility, setLinesVisibility] = useState(Array(5).fill(false));
-  const [isLocationHover, setIsLocationHover] = useState(false);
+  const [linesVisibility, setLinesVisibility] = useState(Array(introText.split('\n').length + 1).fill(false));
   const [isMoreHover, setIsMoreHover] = useState(false);
 
   const moreProps = useSpring({
@@ -15,18 +15,29 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
     config: { duration: 300 }
   });
 
-  const textLines = [
-    <p> Hi 👋 你好！</p>,
-    <p> I'm Wayne Wang - student, </p>,
-    <p> developer, and researcher based at</p>,
-    <div
-      className={'w-fit italic'}
-      onMouseEnter={() => setIsLocationHover(true)}
-      onMouseLeave={() => setIsLocationHover(false)}
-    >
-      <a href='https://www.google.com/maps/place/Middlebury' target="_blank">
+  useEffect(() => {
+    setTimeout(() => {
+      for (let i = 0; i < linesVisibility.length; i++) {
+        setTimeout(() => {
+          setLinesVisibility(prevState => {
+            const newState = [...prevState];
+            newState[i] = true;
+            return newState;
+          });
+        }, i * 200);
+      }
+    }, 300);
+  }, []);
+
+  const location = (
+    <div>
+      I'm currently based in &nbsp;
+      <a 
+        href='https://www.google.com/maps/place/Middlebury' 
+        target="_blank" 
+        className='w-fit italic inline-block'
+      >
         <LinkHoverEffect
-          isHover={isLocationHover}
           underlineHeight={3}
           zoomScale={1.1}
           useGradient
@@ -40,7 +51,10 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
           </div>
         </LinkHoverEffect>
       </a>
-    </div>,
+    </div>
+  );
+
+  const more = (
     <div
       className={'w-fit text-lg sm:text-2xl mt-8 cursor-pointer'}
       onMouseEnter={() => setIsMoreHover(true)}
@@ -48,7 +62,6 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
       onClick={onMoreClick}
     >
       <LinkHoverEffect
-        isHover={isMoreHover}
         underlineHeight={2}
         zoomScale={1.1}
         useGradient
@@ -61,33 +74,24 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
         </div>
       </LinkHoverEffect>
     </div>
-  ]
+  );
 
-  useEffect(() => {
-    setTimeout(() => {
-      for (let i = 0; i < linesVisibility.length; i++) {
-        setTimeout(() => {
-          setLinesVisibility(prevState => {
-            const newState = [...prevState];
-            newState[i] = true;
-            return newState;
-          });
-        }, i * 300);
-      }
-    }, 300);
-  }, []);
-
-  const textLinesAnimated = textLines.map((text, index) => (
-    <div key={index}>
-      <FadeIn isVisible={linesVisibility[index]}>
-        {text}
-      </FadeIn>
-    </div>
-  ));
+  const textLinesAnimated = introText.split('\n').map((line, index) => {
+    return (
+      <div key={index}>
+        <FadeIn isVisible={linesVisibility[index]}>
+          {
+            line === '{Location}' ? location :
+              line === '{More}' ? more :
+                <p>{line}</p>
+          }
+        </FadeIn>
+      </div>)
+  });
 
 
   return (
-    <div className={'pl-8 sm:pl-20 pt-48 sm:pt-64 h-screen text-left text-2xl sm:text-5xl leading-relaxed sm:leading-relaxed h-fit'}>
+    <div className={'pl-8 sm:pl-20 pt-48 sm:pt-56 h-screen text-left text-xl sm:text-4xl leading-relaxed sm:leading-relaxed h-fit'}>
       {textLinesAnimated}
     </div>
   );
