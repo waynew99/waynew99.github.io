@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import MenuBarItem from './MenuBarItem';
 
@@ -7,7 +6,6 @@ interface MenuBarProps {
 }
 
 export default function MenuBar({ handleClick }: MenuBarProps) {
-  const [isLogoHover, setIsLogoHover] = useState(false);
 
   const menuBarItemTexts = [
     'Home',
@@ -30,8 +28,6 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
         <a
           className='cursor-pointer invisible w-0 sm:visible sm:w-fit'
           onClick={() => handleMenuBarItemClick('Home')}
-          onMouseEnter={() => setIsLogoHover(true)}
-          onMouseLeave={() => setIsLogoHover(false)}
         >
           <LinkHoverEffect underlineHeight={2} zoomScale={1.3} >
             <img className={'ml-12 w-20 h-20'} src={`${process.env.PUBLIC_URL}/logoBlack.png`} alt='logo' />

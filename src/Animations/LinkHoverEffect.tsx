@@ -42,8 +42,8 @@ const LinkHoverEffect = ({ shouldHover, children, underlineHeight, zoomScale = 1
 
   return (
     <div
-      onMouseEnter={() => { if (shouldHover===undefined) setIsHover(true) }}
-      onMouseLeave={() => { if (shouldHover===undefined) setIsHover(false) }}
+      onMouseEnter={() => { if (shouldHover===undefined) { setIsHover(true); } }}
+      onMouseLeave={() => { if (shouldHover===undefined) { setIsHover(false); } }}
     >
       <animated.div style={textProps}>
         {children}

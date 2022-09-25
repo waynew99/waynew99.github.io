@@ -1,7 +1,7 @@
 import MenuBar from './MenuBar';
 import HomeTextLines from './HomeTextLines';
 import Works from './Works';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import Cat from './Cat';
 import Contact from './Contact';
 import MoreText from './MoreText';

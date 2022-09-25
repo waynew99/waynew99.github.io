@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 
 export default function MenuBarItem({ text, onClick, lineColor }: { text: string, onClick: (text : string) => void, lineColor?: string }) {

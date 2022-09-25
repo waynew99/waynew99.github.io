@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { animated, useSpring } from '@react-spring/web'
 
 export default function Cat() {

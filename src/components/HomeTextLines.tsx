@@ -1,5 +1,5 @@
 import FadeIn from '../Animations/FadeInEffect';
-import { useState, useEffect, ReactElement } from 'react';
+import { useState, useEffect } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import { useSpring, animated } from '@react-spring/web';
 import { IoArrowDown } from 'react-icons/io5';

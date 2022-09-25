@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import { IoLogoGithub, IoLogoLinkedin, IoCallOutline, IoLogoWechat, IoMail, IoLocationSharp } from 'react-icons/io5';
 
@@ -19,14 +18,9 @@ const avail_icons: icon[] = [
 ];
 
 export default function ContactItem({ text, icon, url }: { text: string, icon: string, url: string }) {
-  const [isHover, setIsHover] = useState(false);
 
   return (
-    <div
-      className={'mt-4 sm:mt-0 mr-0 sm:mr-16 cursor-pointer'}
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
-    >
+    <div className={'mt-4 sm:mt-0 mr-0 sm:mr-16 cursor-pointer'}>
       <LinkHoverEffect underlineHeight={2} useGradient>
         <a className='flex flex-row' href={url} target="_blank">
           <div className='mr-2 flex flex-col justify-center'>
