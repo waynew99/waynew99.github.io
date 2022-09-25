@@ -5,7 +5,7 @@ import { Waypoint } from 'react-waypoint';
 import ContactItem from './ContactItem';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import sendEmail from './SubmitFormUtility';
+import sendEmail from '../utils/SubmitFormUtil';
 
 type MyFormValues = {
   name: string;

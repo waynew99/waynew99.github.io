@@ -8,9 +8,7 @@ import { introText } from '../Data/text';
 
 export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void }) {
   const [linesVisibility, setLinesVisibility] = useState(Array(introText.split('\n').length + 1).fill(false));
-  const [isLocationHover, setIsLocationHover] = useState(false);
   const [isMoreHover, setIsMoreHover] = useState(false);
-  const [textLines, setTextLines] = useState<ReactElement[]>([]);
 
   const moreProps = useSpring({
     opacity: isMoreHover ? 1 : 0,
@@ -29,18 +27,12 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
         }, i * 200);
       }
     }, 300);
-
   }, []);
 
   const location = (
-    <div
-      className={'w-fit italic'}
-      onMouseEnter={() => setIsLocationHover(true)}
-      onMouseLeave={() => setIsLocationHover(false)}
-    >
+    <div className={'w-fit italic'}>
       <a href='https://www.google.com/maps/place/Middlebury' target="_blank">
         <LinkHoverEffect
-          isHover={isLocationHover}
           underlineHeight={3}
           zoomScale={1.1}
           useGradient
@@ -65,7 +57,6 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
       onClick={onMoreClick}
     >
       <LinkHoverEffect
-        isHover={isMoreHover}
         underlineHeight={2}
         zoomScale={1.1}
         useGradient
@@ -85,8 +76,8 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
       <div key={index}>
         <FadeIn isVisible={linesVisibility[index]}>
           {
-            line === '[Location]' ? location :
-              line === '[More]' ? more :
+            line === '*Location*' ? location :
+              line === '*More*' ? more :
                 <p>{line}</p>
           }
         </FadeIn>

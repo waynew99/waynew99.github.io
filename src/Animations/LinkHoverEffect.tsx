@@ -1,7 +1,8 @@
 import { animated, useSpring } from '@react-spring/web'
+import { useEffect, useState } from 'react'
 
 interface LinkHoverProps {
-  isHover: boolean,
+  shouldHover?: boolean,
   children: React.ReactElement
   underlineHeight: number | string,
   zoomScale?: number
@@ -9,7 +10,15 @@ interface LinkHoverProps {
   lineColor?: string
 }
 
-const LinkHoverEffect = ({ isHover, children, underlineHeight, zoomScale = 1, useGradient = false, lineColor = '' }: LinkHoverProps) => {
+const LinkHoverEffect = ({ shouldHover, children, underlineHeight, zoomScale = 1, useGradient = false, lineColor = '' }: LinkHoverProps) => {
+
+  const [isHover, setIsHover] = useState(false);
+
+  useEffect(() => {
+    if (shouldHover !== undefined) {
+      setIsHover(shouldHover);
+    }
+  }, [shouldHover]);
 
   const config = {
     mass: 1,
@@ -32,7 +41,10 @@ const LinkHoverEffect = ({ isHover, children, underlineHeight, zoomScale = 1, us
   const myLineColor = useGradient ? 'bg-gradient-to-r from-cyan-500 to-fuchsia-500' : lineColor;
 
   return (
-    <div>
+    <div
+      onMouseEnter={() => { if (shouldHover===undefined) setIsHover(true) }}
+      onMouseLeave={() => { if (shouldHover===undefined) setIsHover(false) }}
+    >
       <animated.div style={textProps}>
         {children}
       </animated.div>
