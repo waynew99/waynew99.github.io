@@ -24,7 +24,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
             newState[i] = true;
             return newState;
           });
-        }, i * 200);
+        }, i * 300);
       }
     }, 300);
   }, []);
