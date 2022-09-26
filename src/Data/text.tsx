@@ -1,8 +1,7 @@
 export const introText = `
 Hi there 👋 !
-Investment banker, lawyer, physician, scuba diver,
-- I'm none of these things,
-but I'm a system researcher and software engineer in the making.
+I'm Wayne, a student, developer, and researcher in the making.
+At Middlebury College, I'm studying Computer Science and Political Science.
 {Location}
 {More}`;
 
