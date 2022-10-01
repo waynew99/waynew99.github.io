@@ -76,7 +76,7 @@ export default function Contact({ scrollRef }: ContactProps) {
   }
 
   return (
-    <div ref={scrollRef} className='pt-48'>
+    <div ref={scrollRef} className='pt-[30%] sm:pt-[10%] min-h-screen'>
       <h1 className='ml-8 sm:ml-20 text-4xl text-bold'>Contact</h1>
       <Waypoint onEnter={() => {
         setIsOnScreen(true);

@@ -91,7 +91,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
 
 
   return (
-    <div className={'pl-8 sm:pl-20 pt-48 sm:pt-56 h-screen text-left text-xl sm:text-4xl leading-relaxed sm:leading-relaxed h-fit'}>
+    <div className={'pl-8 sm:pl-20 pr-6 sm:pr-8 pt-[50%] sm:pt-[15%] text-left text-xl sm:text-4xl leading-relaxed sm:leading-relaxed h-screen'}>
       {textLinesAnimated}
     </div>
   );

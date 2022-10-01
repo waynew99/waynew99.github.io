@@ -46,7 +46,7 @@ export default function Works({ scrollRef }: WorksProps) {
   ));
 
   return (
-    <div ref={scrollRef} className='mt-8 sm:mt-24 pt-32 sm:pt-36'>
+    <div ref={scrollRef} className='pt-[30%] sm:pt-[10%] min-h-screen'>
       <h1 className='ml-8 sm:ml-20 text-4xl text-bold'>Works</h1>
       <Waypoint onEnter={() => {
         setIsOnScreen(true);
