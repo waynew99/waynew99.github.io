@@ -15,7 +15,8 @@
                 "System kernel",
                 "Research",
                 "Security"
-            ]
+            ],
+            "new": false
         },
         {
             "id": 2,
@@ -30,7 +31,8 @@
                 "React.js",
                 "TypeScript",
                 "Education"
-            ]
+            ],
+            "new": false
         },
         {
             "id": 3,
@@ -46,7 +48,8 @@
                 "Next.js",
                 "PostgreSQL",
                 "JavaScript"
-            ]
+            ],
+            "new": false
         },
         {
             "id": 4,
@@ -64,7 +67,8 @@
                 "Unity",
                 "C#",
                 "Python"
-            ]
+            ],
+            "new": false
         },
         {
             "id": 5,
@@ -79,7 +83,8 @@
                 "React Native",
                 "Expo",
                 "TypeScript"
-            ]
+            ],
+            "new": false
         }
     ],
     "contacts": [

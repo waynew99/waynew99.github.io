@@ -27,7 +27,7 @@ export default function Home() {
   }
 
   return (
-    <div className='justify-center' ref={homeRef}>
+    <div data-theme='light' ref={homeRef}>
       <MenuBar handleClick={handleClick} />
       <HomeTextLines onMoreClick={()=>handleClick('More')}/>
       <MoreText scrollRef={moreTextRef} />

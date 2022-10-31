@@ -14,27 +14,15 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
     'Contact',
   ];
 
+  const handleMenuBarItemClick = (text: string) => {
+    handleClick(text);
+  }
+
   const menuBarItems = menuBarItemTexts.map((text) => (
-    <li><a onClick={() => handleClick(text)}>{text}</a></li>
+    <MenuBarItem key={text} text={text} onClick={handleMenuBarItemClick} />
   ));
 
   return (
-    <div className='fixed top-0 z-10 w-full flex flex-col'>
-      <div className="navbar bg-base-100 pt-6">
-        <div className="flex-1">
-          <a
-            className="btn btn-ghost normal-case text-2xl"
-            onClick={() => handleClick('Home')}>Wayne Wang @ Midd</a>
-        </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal text-lg p-0">
-            {menuBarItems}
-          </ul>
-        </div>
-      </div>
-      <div className='w-full h-4 bg-gradient-to-b from-white' />
-    </div>
-    /*
     <div className='fixed top-0 z-10 w-full flex flex-col'>
       <div className='pt-6 ml-8 sm:ml-0 flex flex-row justify-left sm:justify-between items-center bg-white'>
         <a
@@ -52,7 +40,5 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
       </div>
       <div className='w-full h-4 bg-gradient-to-b from-white' />
     </div>
-   */
-
   );
 }

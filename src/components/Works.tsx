@@ -39,6 +39,7 @@ export default function Works({ scrollRef }: WorksProps) {
           onClick={() => window.open(project.url)}
           extraInfo={project.extraInfo}
           tags={project.tags}
+          newBadge={project.new}
         />
       </FadeInEffect>
     </div>
