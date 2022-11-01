@@ -1,4 +1,3 @@
-import LinkHoverEffect from '../Animations/LinkHoverEffect';
 import { IoLogoGithub, IoLogoLinkedin, IoCallOutline, IoLogoWechat, IoMail, IoLocationSharp } from 'react-icons/io5';
 
 interface icon {

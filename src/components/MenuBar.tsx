@@ -51,7 +51,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
           <a
             className="btn btn-ghost normal-case text-2xl"
             onClick={() => handleClick('Home')}>
-            {"Wayne Wang @ Midd"}
+            {'Wayne Wang @ Midd'}
           </a>
           <div className="flex-none hidden md:block">
               <ul className="menu menu-horizontal text-lg p-0">
