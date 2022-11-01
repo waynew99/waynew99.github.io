@@ -39,7 +39,7 @@ export default function HomeTextLines({ onMoreClick }: { onMoreClick: () => void
       >
         <LinkHoverEffect
           underlineHeight={3}
-          zoomScale={1.1}
+          zoomScale={1.05}
           useGradient
         >
           <div className='flex flex-row'>
