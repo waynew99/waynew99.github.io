@@ -91,8 +91,8 @@
         {
             "id": 1,
             "name": "Email",
-            "value": "me@waynewang.me",
-            "url": "mailto:me@waynewang.me?subject=Hi Wayne!",
+            "value": "sw@middlebury.edu",
+            "url": "mailto:sw@middlebury.edu?subject=Hi Wayne!",
             "icon_name": "email"
         },
         {
