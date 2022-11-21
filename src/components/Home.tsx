@@ -20,7 +20,7 @@ export default function Home() {
     } else if (text === 'Works') {
       worksRef.current?.scrollIntoView({ behavior: 'smooth' });
     } else if (text === 'Résumé') {
-      window.open(`${process.env.PUBLIC_URL}/Wayne-Wang-Resume.pdf`, '_blank');
+      window.open(`${process.env.PUBLIC_URL}/Wayne_(Shuai)_Wang_resume.pdf`, '_blank');
     } else if (text === 'Contact') {
       contactRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
