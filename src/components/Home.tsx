@@ -23,6 +23,8 @@ export default function Home() {
       window.open(`${process.env.PUBLIC_URL}/Wayne_(Shuai)_Wang_resume.pdf`, '_blank');
     } else if (text === 'Contact') {
       contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else if (text === 'MainSite') {
+      window.open('https://waynewang.me');
     }
   }
 

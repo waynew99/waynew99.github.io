@@ -16,7 +16,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
     'Home',
     'Works',
     'Résumé',
-    'Contact',
+    'Contact'
   ];
 
   const icon_size = '24';
@@ -50,7 +50,7 @@ export default function MenuBar({ handleClick }: MenuBarProps) {
         <div className="flex-1">
           <a
             className="btn btn-ghost normal-case text-2xl"
-            onClick={() => handleClick('Home')}>
+            onClick={() => handleClick('MainSite')}>
             {'Wayne Wang @ Midd'}
           </a>
           <div className="flex-none hidden md:block">
