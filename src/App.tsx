@@ -4,8 +4,8 @@ import UnderConstruction from './components/UnderConstruction';
 function App() {
   return (
     <div>
-      {/*<Home />*/}
-      <UnderConstruction />
+      <Home />
+      {/*<UnderConstruction />*/}
     </div>
   );
 }
