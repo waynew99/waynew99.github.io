@@ -138,3 +138,73 @@ ion-icon {
 #aboutMe {
 	text-align: justify;
 }
+
+@media (max-width: 700px) {
+	body {
+		margin: 0;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+
+	#container {
+		box-sizing: border-box;
+		width: 100%;
+		min-width: 0;
+		max-width: none;
+		padding: 12px 16px 24px;
+	}
+
+	#menu h2 {
+		margin-top: 0.5rem;
+	}
+
+	#top {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	#me {
+		width: 150px;
+		height: auto;
+		margin-right: 0;
+		margin-bottom: 1.25rem;
+	}
+
+	#contact {
+		width: 100%;
+		margin-left: 0;
+		overflow-wrap: anywhere;
+	}
+
+	#contact > a {
+		display: inline-block;
+		margin-right: 0.5rem;
+		margin-bottom: 0.35rem;
+	}
+
+	#aboutMe,
+	#papers {
+		text-align: left;
+	}
+
+	.section {
+		padding: 14px;
+		margin-bottom: 1.25rem;
+	}
+
+	.section ul {
+		padding-left: 1.25rem;
+	}
+
+	#top + br,
+	#top + br + br,
+	#top + br + br + br {
+		display: none;
+	}
+
+	#footer {
+		padding-top: 32px;
+	}
+}
